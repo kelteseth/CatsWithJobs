@@ -21,9 +21,9 @@ func _ready():
 	.finished.connect(_fade_out)
 	
 func _process(delta):
-	if interuptable and Input.is_action_just_pressed("exit"):
+	if interuptable and Input.is_action_just_pressed("skip"):
 		_change_scene()
-	
+
 func _fade_out():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC)
