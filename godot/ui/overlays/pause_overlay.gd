@@ -1,4 +1,4 @@
-extends CenterContainer
+extends Control
 
 signal game_exited
 
