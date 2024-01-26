@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyru3nej8klkw"]
+
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_v0bft"]
+
+[sub_resource type="Curve" id="Curve_l4td8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.010989), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_06b6a"]
+curve = SubResource("Curve_l4td8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kj7om"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+gravity = Vector3(0, -100, 0)
+scale_curve = SubResource("CurveTexture_06b6a")
+
+[node name="Flames" type="GPUParticles2D"]
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_kj7om")
+texture = ExtResource("1_v0bft")
