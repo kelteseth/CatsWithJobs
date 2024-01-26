@@ -1,16 +1,15 @@
 extends Control
-
+@onready var movement_label = $MovementLabel
+@onready var movement_progress_bar = $ProgressBar
 signal player_clicked(id)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func set_player_active(player_id):
 	pass
-
+	
+func set_player_percentage_moved(player_id: int, percentage_moved: int):
+	movement_label.text = "Player " + str(player_id + 1) + " "+  str(floor(percentage_moved)) + "meters left"
+	movement_progress_bar.value = floor(percentage_moved)
 
 func _on_button_pressed():
 	player_clicked.emit(0)

@@ -21,7 +21,7 @@ player_0 = NodePath("Player_0")
 player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(119, 176)
+position = Vector2(62, 378)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
@@ -123,7 +123,8 @@ position = Vector2(581, 54)
 shape = SubResource("RectangleShape2D_yfn84")
 
 [node name="Player_0" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(119, 176)
+position = Vector2(62, 378)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(403, 30)
+position = Vector2(200, 196)
+player_id = 1
