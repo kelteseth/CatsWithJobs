@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dujvk0fq3cq0x"]
+
+[ext_resource type="Script" path="res://interactions/fire_fields/flame_field.gd" id="1_fm6mq"]
+
+[node name="FlameField" type="Area2D"]
+script = ExtResource("1_fm6mq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

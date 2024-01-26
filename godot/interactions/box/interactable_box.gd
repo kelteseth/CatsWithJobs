@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var flame: PackedScene
+
 var current_health = 1
 var max_health = 1
 
@@ -9,7 +11,8 @@ func react_to_gravity(direction: Vector2, strength: float):
 	current_gravity_force = direction * strength * mass
 
 func react_to_fire(damage_per_second: float):
-	print("TODO set object aflame")
+	var instance = self.flame.instantiate()
+	self.add_child(instance)
 
 func react_to_force():
 	pass
@@ -26,6 +29,7 @@ func react_to_electriity():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	apply_impulse(Vector2(100, 0))
 	pass
 
 

@@ -8,6 +8,7 @@ extends Node2D
 
 func _ready() -> void:
 	fade_overlay.visible = true
+	return
 	ingame_overlay.player_clicked.connect(on_player_clicked)
 	
 	if SaveGame.has_save():
