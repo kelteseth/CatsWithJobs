@@ -1,21 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=10 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_m6rsn"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
-[ext_resource type="Script" path="res://scenes/node_example.gd" id="3_a5686"]
-[ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="6_cmt2w"]
-[ext_resource type="PackedScene" uid="uid://bjtvxgek4tdf" path="res://interactions/gravity_fields/gravity_field.tscn" id="7_m08qs"]
+[ext_resource type="PackedScene" uid="uid://c5vyoo400vr0u" path="res://ui/overlays/ingame_overlay.tscn" id="5_yrup4"]
+[ext_resource type="PackedScene" uid="uid://b3kdd27qyixd8" path="res://scenes/player.tscn" id="6_megu6"]
 
-[node name="IngameScene" type="Node2D"]
+[sub_resource type="QuadMesh" id="QuadMesh_lngja"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t4sp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfn84"]
+size = Vector2(1155.5, 101)
+
+[node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
+ingame_overlay = NodePath("UI/IngameOverlay")
+player_0 = NodePath("Player_0")
+player_1 = NodePath("Player_1")
 
-[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
-texture = ExtResource("2_h1yxu")
-script = ExtResource("3_a5686")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(119, 176)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("2_m6rsn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 476.0
+offset_top = 378.0
+offset_right = 632.0
+offset_bottom = 402.0
+text = "Todo: Game lol"
+scroll_active = false
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="IngameOverlay" parent="UI" instance=ExtResource("5_yrup4")]
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
 unique_name_in_owner = true
@@ -26,7 +47,83 @@ unique_name_in_owner = true
 process_mode = 2
 visible = false
 
-[node name="Box" parent="." instance=ExtResource("6_cmt2w")]
-position = Vector2(483, 361)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 542)
 
-[node name="GravityField" parent="." instance=ExtResource("7_m08qs")]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D"]
+position = Vector2(582, 51)
+scale = Vector2(1149.25, 95.75)
+mesh = SubResource("QuadMesh_lngja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+physics_material_override = SubResource("PhysicsMaterial_t4sp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2(581, 54)
+shape = SubResource("RectangleShape2D_yfn84")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(308, 346)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D2"]
+position = Vector2(582, 51)
+scale = Vector2(1149.25, 95.75)
+mesh = SubResource("QuadMesh_lngja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
+physics_material_override = SubResource("PhysicsMaterial_t4sp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D"]
+position = Vector2(581, 54)
+shape = SubResource("RectangleShape2D_yfn84")
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(487, 206)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D3"]
+position = Vector2(582, 51)
+scale = Vector2(1149.25, 95.75)
+mesh = SubResource("QuadMesh_lngja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D3"]
+physics_material_override = SubResource("PhysicsMaterial_t4sp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/StaticBody2D"]
+position = Vector2(581, 54)
+shape = SubResource("RectangleShape2D_yfn84")
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2(800, 68)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D4"]
+position = Vector2(582, 51)
+scale = Vector2(1149.25, 95.75)
+mesh = SubResource("QuadMesh_lngja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D4"]
+physics_material_override = SubResource("PhysicsMaterial_t4sp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/StaticBody2D"]
+position = Vector2(581, 54)
+shape = SubResource("RectangleShape2D_yfn84")
+
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2(1091, -45)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D5"]
+position = Vector2(582, 51)
+scale = Vector2(1149.25, 95.75)
+mesh = SubResource("QuadMesh_lngja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D5"]
+physics_material_override = SubResource("PhysicsMaterial_t4sp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D5/StaticBody2D"]
+position = Vector2(581, 54)
+shape = SubResource("RectangleShape2D_yfn84")
+
+[node name="Player_0" parent="." instance=ExtResource("6_megu6")]
+position = Vector2(119, 176)
+
+[node name="Player_1" parent="." instance=ExtResource("6_megu6")]
+position = Vector2(403, 30)
