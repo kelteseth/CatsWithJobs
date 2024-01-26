@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="MyGame"
+config/name="CatsWithJobs"
 run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
 
 [autoload]
 
-UserSettings="*res://settings/user_settings.gd"
+UserSettings="*res://scenes/settings/user_settings.gd"
 
 [display]
 
@@ -26,6 +26,10 @@ window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://ui/assets/cursor.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [gui]
 

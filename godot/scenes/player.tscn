@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3kdd27qyixd8"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="3_q3rre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
+size = Vector2(115, 122.5)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
+script = ExtResource("1_2ppkv")
+phantom_camera = NodePath("PhantomCamera2D")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+script = ExtResource("2_ef8x3")
+follow_mode = 1
+follow_target = NodePath("..")
+limit_margin = Vector4(0, 0, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(60.5, 61.75)
+shape = SubResource("RectangleShape2D_bi7k1")
+
+[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
+position = Vector2(62, 64)
+texture = ExtResource("3_q3rre")
