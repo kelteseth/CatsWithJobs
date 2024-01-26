@@ -1,9 +1,13 @@
 extends RigidBody2D
 
-@export var flame: PackedScene
+@export var vfx_prefab: PackedScene
+@export var flame_field_prefab: PackedScene
 
 var current_health = 1
 var max_health = 1
+
+var spawned_flame_field: Node
+var spawned_flame_vfx: Node
 
 var current_gravity_force = Vector2.ZERO
 
@@ -11,8 +15,19 @@ func react_to_gravity(direction: Vector2, strength: float):
 	current_gravity_force = direction * strength * mass
 
 func react_to_fire(damage_per_second: float):
-	var instance = self.flame.instantiate()
-	self.add_child(instance)
+	if damage_per_second > 0:
+		if self.spawned_flame_field == null:
+			var instance
+			instance = self.vfx_prefab.instantiate()
+			self.add_child(instance)
+			self.spawned_flame_vfx = instance
+			
+			instance = self.flame_field_prefab.instantiate()
+			call_deferred("add_child", instance)
+			self.spawned_flame_field = instance
+	else:
+		call_deferred("remove_child", self.spawned_flame_vfx)
+		call_deferred("remove_child", self.spawned_flame_field)
 
 func react_to_force():
 	pass

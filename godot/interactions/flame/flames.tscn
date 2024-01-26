@@ -1,22 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyru3nej8klkw"]
 
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_v0bft"]
-
-[sub_resource type="Curve" id="Curve_l4td8"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.010989), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_06b6a"]
-curve = SubResource("Curve_l4td8")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kj7om"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(100, 100, 1)
-gravity = Vector3(0, -100, 0)
-scale_curve = SubResource("CurveTexture_06b6a")
+[ext_resource type="Texture2D" uid="uid://g5kf5fww15ml" path="res://assets/flame_01.png" id="1_0nhfk"]
+[ext_resource type="Texture2D" uid="uid://db1bxo2p2kk4n" path="res://assets/flame_02.png" id="1_brela"]
+[ext_resource type="Material" uid="uid://ck4jmvgc1qfjc" path="res://interactions/flame/flames_process_material.tres" id="1_dihtd"]
+[ext_resource type="Texture2D" uid="uid://q3xhxdwyvp10" path="res://assets/flame_03.png" id="4_qiar2"]
 
 [node name="Flames" type="GPUParticles2D"]
 amount = 3
-process_material = SubResource("ParticleProcessMaterial_kj7om")
-texture = ExtResource("1_v0bft")
+process_material = ExtResource("1_dihtd")
+texture = ExtResource("1_0nhfk")
+
+[node name="Flames2" type="GPUParticles2D" parent="."]
+process_material = ExtResource("1_dihtd")
+texture = ExtResource("1_brela")
+
+[node name="Flames3" type="GPUParticles2D" parent="."]
+process_material = ExtResource("1_dihtd")
+texture = ExtResource("4_qiar2")
