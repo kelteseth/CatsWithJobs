@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bukurk3lyylis"]
+
+[ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_prwdu"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="4_0fehj"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="5_0w4py"]
+[ext_resource type="PackedScene" uid="uid://bjtvxgek4tdf" path="res://interactions/gravity_fields/gravity_field.tscn" id="5_ccgh1"]
+[ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="6_pcw00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvolf"]
+size = Vector2(338, 201)
+
+[node name="IngameScene" type="Node2D"]
+script = ExtResource("1_prwdu")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("4_0fehj")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" instance=ExtResource("5_0w4py")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="Box" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(115, 300)
+
+[node name="Box2" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(140, 451)
+
+[node name="GravityField" parent="." instance=ExtResource("5_ccgh1")]
+position = Vector2(329, 172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
+shape = SubResource("RectangleShape2D_lvolf")
