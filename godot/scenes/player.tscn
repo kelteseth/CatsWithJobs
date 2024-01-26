@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=9 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
 [ext_resource type="Texture2D" uid="uid://dp7o0pwa0vlcb" path="res://assets/cat_one_left.png" id="3_3ok0d"]
+[ext_resource type="Texture2D" uid="uid://xnu2v23bl4uy" path="res://assets/cat_one_right.png" id="3_loayj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
-size = Vector2(115, 122.5)
+size = Vector2(80.5, 122.25)
 
 [sub_resource type="Animation" id="Animation_oicw5"]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NodeExample:position")
+tracks/0/path = NodePath("PlayerImage:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +28,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NodeExample:position")
+tracks/0/path = NodePath("PlayerImage:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,6 +47,8 @@ _data = {
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 script = ExtResource("1_2ppkv")
 phantom_camera = NodePath("PhantomCamera2D")
+plazer_image_left = ExtResource("3_3ok0d")
+plazer_image_right = ExtResource("3_loayj")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 script = ExtResource("2_ef8x3")
@@ -54,12 +57,12 @@ follow_target = NodePath("..")
 limit_margin = Vector4(0, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(60.5, 61.75)
+position = Vector2(40.75, 62.875)
 shape = SubResource("RectangleShape2D_bi7k1")
 
-[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
+[node name="PlayerImage" type="Sprite2D" parent="." groups=["Persist"]]
 position = Vector2(50.25, 75.1151)
-scale = Vector2(0.326498, 0.326498)
+scale = Vector2(0.276025, 0.276025)
 texture = ExtResource("3_3ok0d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

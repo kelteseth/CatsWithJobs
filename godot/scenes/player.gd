@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -800.0
 @export var max_player_units_moved: float = 1000
 @export var phantom_camera: PhantomCamera2D
 @export var player_id = 0
+@export var plazer_image_left: CompressedTexture2D
+@export var plazer_image_right: CompressedTexture2D
 @onready var animation_player = $AnimationPlayer
+@onready var player_image = $PlayerImage
 var input_active = false
 var last_position = Vector2()
 var total_distance_moved: float = 0.0
-
 
 signal turn_done(player_id)
 signal player_moved(player_id, units_moved)
@@ -32,8 +33,6 @@ func set_player_active(is_active):
 		total_distance_moved = 0
 		animation_player.stop()
 		
-
-	
 func calc_distance_traveled():
 	var distance_this_frame = position.distance_to(last_position)
 	total_distance_moved += distance_this_frame
@@ -69,6 +68,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction < 0:
+			player_image.texture = plazer_image_left
+		if direction > 0:
+			player_image.texture =plazer_image_right
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
