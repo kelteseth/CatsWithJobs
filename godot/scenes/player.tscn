@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=16 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bv5aedbpdkvgx" path="res://assets/cat_one_left_body_action.png" id="6_au6wg"]
 [ext_resource type="Texture2D" uid="uid://cvtq2bp5wjswr" path="res://assets/cat_one_right_head.png" id="6_jqiee"]
 [ext_resource type="Texture2D" uid="uid://bc2dwg12brnb6" path="res://assets/cat_one_right_body.png" id="7_r6kqh"]
+[ext_resource type="Texture2D" uid="uid://bgcav8lto6w67" path="res://assets/cat_one_right_head_sleep.png" id="8_e5vao"]
 [ext_resource type="Texture2D" uid="uid://4ip4d8f4hx43" path="res://assets/cat_one_right_body_action.png" id="9_8xun8"]
 [ext_resource type="Texture2D" uid="uid://cw5tvu08ga06w" path="res://assets/gun.png" id="10_yxm58"]
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
@@ -39,6 +40,7 @@ body_action_texture = ExtResource("6_au6wg")
 [node name="CatBodyRight" parent="." instance=ExtResource("5_3jwx6")]
 visible = false
 head_texture = ExtResource("6_jqiee")
+head_sleep_texture = ExtResource("8_e5vao")
 body_texture = ExtResource("7_r6kqh")
 body_action_texture = ExtResource("9_8xun8")
 

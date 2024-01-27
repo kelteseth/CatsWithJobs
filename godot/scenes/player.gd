@@ -90,6 +90,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	cat_body_left.set_sleeping(not input_active)
+	cat_body_right.set_sleeping(not input_active)
 
 	# Handle jump.
 	if input_active and Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():

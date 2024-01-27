@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var head_texture: CompressedTexture2D
+@export var head_sleep_texture: CompressedTexture2D
 @export var body_texture: CompressedTexture2D
 @export var body_action_texture: CompressedTexture2D
 @export var tail_texture: CompressedTexture2D
@@ -13,6 +14,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 enum State {IDLE,RUN}
 var current_state: State = State.IDLE
+var sleeping = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +31,15 @@ func _ready():
 		animation_player.play(current_animation_name)
 		var animation = animation_player.get_animation(current_animation_name)
 		animation.loop_mode = Animation.LOOP_LINEAR
+
+func set_sleeping(is_sleeping):
+	#if is_sleeping == sleeping:
+	#	return
+	if is_sleeping:
+		head.texture = head_sleep_texture
+	else:
+		head.texture = head_texture
+		
 
 func set_state(state):
 	if state == State.IDLE:
