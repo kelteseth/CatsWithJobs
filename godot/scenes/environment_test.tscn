@@ -33,13 +33,13 @@ position = Vector2(218, 71)
 position = Vector2(166, 477)
 
 [node name="GravityField" parent="." instance=ExtResource("5_ccgh1")]
-position = Vector2(1112, 200)
+position = Vector2(481, 212)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
 shape = SubResource("RectangleShape2D_lvolf")
 
 [node name="FlameField" parent="." instance=ExtResource("6_vc8o3")]
-position = Vector2(471, 198)
+position = Vector2(382, 670)
 
 [node name="ExplosionField" parent="." instance=ExtResource("7_d5mdf")]
 position = Vector2(999, 607)

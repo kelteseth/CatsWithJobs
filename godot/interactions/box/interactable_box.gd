@@ -20,7 +20,7 @@ func react_to_fire(damage_per_second: float, field: Node):
 		return
 		
 	if damage_per_second > 0:
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayerBurning.play()
 		
 		self.burn_sources += 1
 		if self.burn_sources == 1:
@@ -35,7 +35,7 @@ func react_to_fire(damage_per_second: float, field: Node):
 	else:
 		self.burn_sources -= 1
 		if self.burn_sources == 0:
-			$AudioStreamPlayer2D.stop()
+			$AudioStreamPlayerBurning.stop()
 			self.spawned_flame_vfx.queue_free()
 			self.spawned_flame_field.queue_free()
 
@@ -73,5 +73,5 @@ func _integrate_forces(state):
 
 
 func _on_body_entered(body):
-	print("TOOD tell hit body to take damage")
+	$AudioStreamPlayerColliding.play()
 

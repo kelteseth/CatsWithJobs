@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://do062sse1ppiu"]
+[gd_scene load_steps=8 format=3 uid="uid://do062sse1ppiu"]
 
 [ext_resource type="Script" path="res://interactions/box/interactable_box.gd" id="1_skdys"]
 [ext_resource type="PackedScene" uid="uid://cyru3nej8klkw" path="res://interactions/flame/flames.tscn" id="2_vdjpo"]
 [ext_resource type="PackedScene" uid="uid://dujvk0fq3cq0x" path="res://interactions/fire_fields/flame_field.tscn" id="3_ioir2"]
 [ext_resource type="Texture2D" uid="uid://dbqvrowlgpnnw" path="res://assets/carton_closed.png" id="4_u1hnq"]
 [ext_resource type="AudioStream" uid="uid://bcvuxlnx3fptg" path="res://assets/Sounds/Items/burning_mehr_knister.ogg" id="5_i1oyo"]
+[ext_resource type="AudioStream" uid="uid://bkwow5q8u7y1h" path="res://assets/Sounds/Items/fallender_karton.ogg" id="6_vng6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxlya"]
 size = Vector2(128, 128)
@@ -23,7 +24,10 @@ texture = ExtResource("4_u1hnq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pxlya")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayerBurning" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_i1oyo")
+
+[node name="AudioStreamPlayerColliding" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vng6o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
