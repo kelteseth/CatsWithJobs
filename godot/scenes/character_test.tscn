@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3pxhqlixpy35"]
+
+[ext_resource type="PackedScene" uid="uid://cyrxxci5jjgl1" path="res://scenes/cat_body.tscn" id="1_e3g11"]
+[ext_resource type="Texture2D" uid="uid://cbkopdlhbn4fc" path="res://assets/cat_two_left_head.png" id="2_u3xni"]
+[ext_resource type="Texture2D" uid="uid://bh02wyp3gisj" path="res://assets/cat_two_left_body.png" id="3_ii8cr"]
+[ext_resource type="Texture2D" uid="uid://bfu7ge1ymtfh3" path="res://assets/cat_two_right_tail.png" id="4_pvl4t"]
+[ext_resource type="Texture2D" uid="uid://qbppip56fnsc" path="res://assets/cat_two_left_body_action.png" id="4_s51e6"]
+
+[node name="CharacterTest" type="Node2D"]
+
+[node name="CatBody" parent="." instance=ExtResource("1_e3g11")]
+position = Vector2(65, 54)
+
+[node name="CatBody2" parent="." instance=ExtResource("1_e3g11")]
+position = Vector2(374, 75)
+head_texture = ExtResource("2_u3xni")
+body_texture = ExtResource("3_ii8cr")
+body_action_texture = ExtResource("4_s51e6")
+tail_texture = ExtResource("4_pvl4t")
+
+[node name="CatBody3" parent="." instance=ExtResource("1_e3g11")]
+position = Vector2(762, 72)
+body_texture = ExtResource("3_ii8cr")
+
+[node name="CatBody4" parent="." instance=ExtResource("1_e3g11")]
+position = Vector2(45, 531)
