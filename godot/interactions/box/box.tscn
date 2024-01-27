@@ -18,10 +18,11 @@ vfx_prefab = ExtResource("2_vdjpo")
 flame_field_prefab = ExtResource("3_ioir2")
 
 [node name="Box" type="Sprite2D" parent="."]
-scale = Vector2(0.205, 0.205)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_u1hnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_pxlya")
 
 [node name="AudioStreamPlayerBurning" type="AudioStreamPlayer2D" parent="."]
