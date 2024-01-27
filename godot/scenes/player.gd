@@ -143,21 +143,23 @@ func _physics_process(delta):
 
 func shoot():
 	print("shoot",movement_direction)
-	var bullet = bullet_scene.instantiate()
-	if movement_direction == MovementDirection.LEFT || movement_direction == MovementDirection.INVALID:
-		bullet.position = gun_pos_right.global_position
-		bullet.rotation = gun_pos_right.global_rotation
-	if movement_direction == MovementDirection.RIGHT:
-		bullet.position = gun_pos_left.global_position
-		bullet.rotation = gun_pos_left.global_rotation
-	get_tree().current_scene.add_child(bullet)
+	for i in range(5):
+		var bullet = bullet_scene.instantiate()
+		if movement_direction == MovementDirection.LEFT || movement_direction == MovementDirection.INVALID:
+			bullet.position = gun_pos_right.global_position
+			bullet.rotation = gun_pos_right.global_rotation
+		if movement_direction == MovementDirection.RIGHT:
+			bullet.position = gun_pos_left.global_position
+			bullet.rotation = gun_pos_left.global_rotation
+		get_tree().current_scene.add_child(bullet)
+		bullet.position += Vector2(randf_range(1, 5), randf_range(1, 5))
+	
+		
+		# Calculate the direction from the gun to the target cursor
+		var direction = (target_cursor.global_position - gun_pos_left.global_position).normalized()
+		# Define the impulse strength (adjust as necessary)
+		var impulse_strength = 1000
+		# Apply the impulse to the bullet
+		bullet.apply_impulse( direction * impulse_strength)
 	
 	$AudioStreamPlayerShoot.play(0.05)
-	
-	# Calculate the direction from the gun to the target cursor
-	var direction = (target_cursor.global_position - gun_pos_left.global_position).normalized()
-	# Define the impulse strength (adjust as necessary)
-	var impulse_strength = 1000
-	# Apply the impulse to the bullet
-	bullet.apply_impulse( direction * impulse_strength)
-
