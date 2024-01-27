@@ -7,13 +7,17 @@ const JUMP_VELOCITY = -600.0
 @export var player_id = 0
 @export var plazer_image_left: CompressedTexture2D
 @export var plazer_image_right: CompressedTexture2D
-@onready var animation_player = $AnimationPlayer
-@onready var player_image = $PlayerImage
 @onready var cat_body_left = $CatBodyLeft
 @onready var cat_body_right = $CatBodyRight
+@onready var gun_pos_right = $GunPosRight
+@onready var gun_pos_left = $GunPosLeft
+@onready var target_cursor:Sprite2D = $TargetCursor
 var input_active = false
 var last_position = Vector2()
 var total_distance_moved: float = 0.0
+var cursor_speed = 200
+
+enum MovementDirection {INVALID, LEFT, RIGHT}
 
 signal turn_done(player_id)
 signal player_moved(player_id, units_moved)
@@ -23,17 +27,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func set_player_active(is_active):
 	input_active = is_active
-	#var idle_anim = animation_player.get_animation("animaton_idle")
 	if is_active:
 		phantom_camera.set_priority(1)
 		last_position = position
 		total_distance_moved = 0
-		#animation_player.play("animaton_idle")
-		#idle_anim.loop_mode = Animation.LOOP_LINEAR
 	else:
 		phantom_camera.set_priority(0)
 		total_distance_moved = 0
-		#animation_player.stop()
 		
 func calc_distance_traveled():
 	var distance_this_frame = position.distance_to(last_position)
@@ -49,32 +49,69 @@ func calc_distance_traveled():
 func _ready():
 	last_position = position
 
+func move_cusor(delta: float, movement_direction: MovementDirection):
+	# Construct input action names based on player_id
+	var move_right_action = "target_right_p" + str(player_id)
+	var move_left_action = "target_left_p" + str(player_id)
+	var move_down_action = "target_down_p" + str(player_id)
+	var move_up_action = "target_up_p" + str(player_id)
+
+	# Get input from the joystick
+	var input_vector = Vector2(
+		Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
+		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
+	)
+
+	# Normalize the vector to have a consistent movement speed in all directions
+	if input_vector.length() > 0:
+		input_vector = input_vector.normalized()
+
+	# Define the speed of the cursor
+	var speed = 500  # Adjust the speed as necessary
+
+	# Update the position
+	target_cursor.position += input_vector * speed * delta
+	
+	if movement_direction == MovementDirection.RIGHT:
+		gun_pos_left.visible = true
+		gun_pos_right.visible = false
+		gun_pos_left.look_at(target_cursor.global_position)
+	if movement_direction == MovementDirection.LEFT:
+		gun_pos_left.visible = false
+		gun_pos_right.visible = true
+		gun_pos_right.look_at(target_cursor.global_position)
+	
 	
 func _physics_process(delta):
-	if not input_active:
-		return 
-
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():
+	if input_active and Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		print("jump")
-
-	calc_distance_traveled()
+		$AudioStreamPlayerJump.play(0.05)
 
 	# Handle movement/deceleration.
 	var direction = 0
-	if Input.is_action_pressed("move_left_p" + str(player_id)):
+	var movement_direction = MovementDirection.INVALID
+	if input_active and Input.is_action_pressed("move_left_p" + str(player_id)):
 		direction -= 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 		cat_body_left.visible = true
 		cat_body_right.visible = false
-	if Input.is_action_pressed("move_right_p" + str(player_id)):
+		movement_direction = MovementDirection.LEFT
+	if input_active and Input.is_action_pressed("move_right_p" + str(player_id)):
 		direction += 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 		cat_body_left.visible = false
 		cat_body_right.visible = true
+		movement_direction = MovementDirection.RIGHT
+		
+	calc_distance_traveled()
+	move_cusor(delta,movement_direction)
 
 	if direction != 0:
 		velocity.x = direction * SPEED
@@ -87,4 +124,4 @@ func _physics_process(delta):
 	if total_distance_moved >= max_player_units_moved:
 		input_active = false
 		turn_done.emit(player_id)
-	
+

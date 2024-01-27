@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://jyv4g54adkmo"]
+
+[ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
+[ext_resource type="Shader" path="res://ui/overlays/pause_overlay.gdshader" id="2_mpghw"]
+[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
+[ext_resource type="AudioStream" uid="uid://oq1m3tq5m5cs" path="res://assets/Sounds/Music/menu_selection.ogg" id="4_widyx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2t4s"]
+shader = ExtResource("2_mpghw")
+shader_parameter/overlay_color = Color(0.596078, 0.596078, 0.596078, 1)
+shader_parameter/blur_amount = 1.0
+
+[node name="PauseOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q2yda")
+
+[node name="ColorRect" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_d2t4s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer3"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "game_paused"
+horizontal_alignment = 1
+
+[node name="SettingsContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="GameSettings" parent="CenterContainer/VBoxContainer3/SettingsContainer" instance=ExtResource("2_n78uc")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer3/SettingsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "return_to_menu"
+
+[node name="MenuContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "resume_game"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "settings"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "leave_game"
+
+[node name="AudioStreamPlayerBeep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_widyx")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

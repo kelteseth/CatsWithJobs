@@ -21,6 +21,7 @@ func grab_button_focus() -> void:
 func _resume() -> void:
 	get_tree().paused = false
 	visible = false
+	get_node("/root/IngameScene/AudioStreamPlayerBackgroundnMusic").pitch_scale = 1.0
 	
 	
 func _settings() -> void:
@@ -44,3 +45,11 @@ func _unhandled_input(event):
 			_resume()
 		if settings_container.visible:
 			_pause_menu()
+
+func _input(event):
+	if event.is_action_pressed("ui_up") \
+	|| event.is_action_pressed("ui_right") \
+	|| event.is_action_pressed("ui_left") \
+	|| event.is_action_pressed("ui_down") \
+	|| event.is_action_pressed("ui_accept"):
+		$AudioStreamPlayerBeep.play()
