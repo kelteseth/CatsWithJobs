@@ -7,8 +7,6 @@ const JUMP_VELOCITY = -600.0
 @export var player_id = 0
 @export var plazer_image_left: CompressedTexture2D
 @export var plazer_image_right: CompressedTexture2D
-@onready var animation_player = $AnimationPlayer
-@onready var player_image = $PlayerImage
 @onready var cat_body_left = $CatBodyLeft
 @onready var cat_body_right = $CatBodyRight
 @onready var gun_pos_right = $GunPosRight
@@ -60,8 +58,8 @@ func move_cusor(delta: float, movement_direction: MovementDirection):
 
 	# Get input from the joystick
 	var input_vector = Vector2(
-	Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
-	Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
+		Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
+		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
 	)
 
 	# Normalize the vector to have a consistent movement speed in all directions
@@ -83,9 +81,8 @@ func move_cusor(delta: float, movement_direction: MovementDirection):
 		gun_pos_right.visible = true
 		gun_pos_right.look_at(target_cursor.global_position)
 	
-func _physics_process(delta):
 	
-
+func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -93,18 +90,22 @@ func _physics_process(delta):
 	# Handle jump.
 	if input_active and Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		print("jump")
+		$AudioStreamPlayerJump.play(0.05)
 
 	# Handle movement/deceleration.
 	var direction = 0
 	var movement_direction = MovementDirection.INVALID
 	if input_active and Input.is_action_pressed("move_left_p" + str(player_id)):
 		direction -= 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 		cat_body_left.visible = true
 		cat_body_right.visible = false
 		movement_direction = MovementDirection.LEFT
 	if input_active and Input.is_action_pressed("move_right_p" + str(player_id)):
 		direction += 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 		cat_body_left.visible = false
 		cat_body_right.visible = true
 		movement_direction = MovementDirection.RIGHT

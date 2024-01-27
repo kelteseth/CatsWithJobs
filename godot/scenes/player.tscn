@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=15 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://4ip4d8f4hx43" path="res://assets/cat_one_right_body_action.png" id="9_8xun8"]
 [ext_resource type="Texture2D" uid="uid://cw5tvu08ga06w" path="res://assets/gun.png" id="10_yxm58"]
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
+[ext_resource type="AudioStream" uid="uid://bccnnuxegty61" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
+[ext_resource type="AudioStream" uid="uid://cstwvjwi08wau" path="res://assets/Sounds/Cat/jump.ogg" id="13_4qxdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(80.5, 122.25)
@@ -61,3 +63,10 @@ texture = ExtResource("10_yxm58")
 [node name="TargetCursor" type="Sprite2D" parent="."]
 scale = Vector2(0.118333, 0.118333)
 texture = ExtResource("11_y6stc")
+
+[node name="AudioStreamPlayerSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_y65u5")
+volume_db = 8.0
+
+[node name="AudioStreamPlayerJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_4qxdn")
