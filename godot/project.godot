@@ -134,6 +134,10 @@ jump_p1={
 
 locale/translations=PackedStringArray("res://i18n/translation.de.translation", "res://i18n/translation.en.translation")
 
+[physics]
+
+2d/default_linear_damp=0.0
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
