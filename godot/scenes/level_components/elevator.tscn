@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://4n0kjfs1w4fk" path="res://assets/elevator.png" id="1_54u51"]
 
-[node name="Elevator" type="Node2D"]
+[node name="Elevator" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(90, -112)
+scale = Vector2(0.07, 0.07)
+polygon = PackedVector2Array(1350, 1580, -1290, 1580, -1290, -1430, 1360, -1430, 1360, -1290, -1180, -1290, -1180, 1470, 1360, 1470)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(90, -112)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_54u51")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
-polygon = PackedVector2Array(1350, 1580, -1290, 1580, -1290, -1430, 1360, -1430, 1360, -1290, -1180, -1290, -1180, 1470, 1360, 1470)

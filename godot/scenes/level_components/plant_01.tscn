@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfy32oqnue54s"]
+
+[ext_resource type="Texture2D" uid="uid://7w6esrentc4j" path="res://assets/plant_01.png" id="1_p1o8t"]
+
+[node name="CaffeeLeft" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(6.625, -6.49567)
+scale = Vector2(0.0971154, 0.0971154)
+polygon = PackedVector2Array(-47.6237, -97.8663, -68.2178, -97.8663, -68.2178, 66.8862, 106.832, 66.8862, 117.129, -97.8663, 86.2377, -97.8663, 117.129, -159.649, 117.129, -242.025, 55.3466, -211.134, 24.4555, -262.619, -6.43562, -221.431, -68.2178, -231.728, -68.2178, -180.243)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -16)
+scale = Vector2(0.0971154, 0.0971154)
+texture = ExtResource("1_p1o8t")
