@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo8ymmae1prge"]
+[gd_scene load_steps=4 format=3 uid="uid://bo8ymmae1prge"]
 
 [ext_resource type="Texture2D" uid="uid://cngy45whibla6" path="res://assets/chair_left.png" id="1_kn63a"]
+[ext_resource type="Script" path="res://scenes/level_components/chair_left.gd" id="1_xjoe2"]
+[ext_resource type="AudioStream" uid="uid://b5mat7i808ouo" path="res://assets/Sounds/Items/office_chair.ogg" id="3_nliod"]
 
 [node name="ChairLeft" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 7
+max_contacts_reported = 4
+contact_monitor = true
+script = ExtResource("1_xjoe2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(29.9905, -60.0158)
@@ -15,3 +20,9 @@ polygon = PackedVector2Array(-8.25435, 391.798, -8.25435, 116.798, -233.254, 116
 position = Vector2(30, -72)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_kn63a")
+
+[node name="AudioStreamPlayerCollision" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nliod")
+volume_db = 15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://r7v5qnxkdjuv"]
+
+[ext_resource type="Texture2D" uid="uid://dj1jmutdphg1t" path="res://assets/carton_closed.png" id="1_qg21l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v5t2"]
+size = Vector2(64, 57)
+
+[node name="CartonClosed" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33, -28.5)
+shape = SubResource("RectangleShape2D_0v5t2")
+
+[node name="CartonClosed" type="Sprite2D" parent="."]
+position = Vector2(33, -31)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_qg21l")
