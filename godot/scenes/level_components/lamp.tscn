@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy5wj6ynbbs35"]
+
+[ext_resource type="Texture2D" uid="uid://fnxiornmac4c" path="res://assets/lamp.png" id="1_8sas8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rx8i"]
+size = Vector2(2400, 520)
+
+[node name="Lamp" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(124, -27)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_8rx8i")
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(133, -57)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8sas8")

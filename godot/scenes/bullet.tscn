@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ywj12jyj1b24"]
+[gd_scene load_steps=5 format=3 uid="uid://ywj12jyj1b24"]
 
 [ext_resource type="Script" path="res://scenes/bullet.gd" id="1_2yk2d"]
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_oce6t"]
+[ext_resource type="Texture2D" uid="uid://g5kf5fww15ml" path="res://assets/flame_01.png" id="2_k2luh"]
+[ext_resource type="PackedScene" uid="uid://dujvk0fq3cq0x" path="res://interactions/fire_fields/flame_field.tscn" id="3_emq3x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k88vx"]
 
@@ -15,4 +16,7 @@ shape = SubResource("CircleShape2D_k88vx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0683333, 0.0703431)
-texture = ExtResource("2_oce6t")
+texture = ExtResource("2_k2luh")
+
+[node name="FlameField" parent="." instance=ExtResource("3_emq3x")]
+scale = Vector2(0.1, 0.1)
