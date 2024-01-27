@@ -9,6 +9,7 @@ radius = 100.0
 script = ExtResource("1_fm6mq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_ujt5a")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
