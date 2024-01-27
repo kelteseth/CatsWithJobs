@@ -27,6 +27,7 @@ player_0 = NodePath("Player_0")
 player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(48, 378)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
