@@ -8,15 +8,20 @@ var max_health = 1
 
 var spawned_flame_field: Node
 var spawned_flame_vfx: Node
+var burn_sources: int = 0
 
 var current_gravity_force = Vector2.ZERO
 
 func react_to_gravity(direction: Vector2, strength: float):
 	current_gravity_force = direction * strength * mass
 
-func react_to_fire(damage_per_second: float):
+func react_to_fire(damage_per_second: float, field: Node):
+	if field in self.get_children():
+		return
+		
 	if damage_per_second > 0:
-		if self.spawned_flame_field == null:
+		self.burn_sources += 1
+		if self.burn_sources == 1:
 			var instance
 			instance = self.vfx_prefab.instantiate()
 			self.add_child(instance)
@@ -26,8 +31,10 @@ func react_to_fire(damage_per_second: float):
 			call_deferred("add_child", instance)
 			self.spawned_flame_field = instance
 	else:
-		call_deferred("queue_free", self.spawned_flame_vfx)
-		call_deferred("queue_free", self.spawned_flame_field)
+		self.burn_sources -= 1
+		if self.burn_sources == 0:
+			self.spawned_flame_vfx.queue_free()
+			self.spawned_flame_field.queue_free()
 
 
 func react_to_force():

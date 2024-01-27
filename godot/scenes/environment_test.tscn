@@ -24,10 +24,13 @@ process_mode = 2
 visible = false
 
 [node name="Box" parent="." instance=ExtResource("6_pcw00")]
-position = Vector2(115, 300)
+position = Vector2(141, 326)
+
+[node name="Box3" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(218, 71)
 
 [node name="Box2" parent="." instance=ExtResource("6_pcw00")]
-position = Vector2(140, 451)
+position = Vector2(166, 477)
 
 [node name="GravityField" parent="." instance=ExtResource("5_ccgh1")]
 position = Vector2(1112, 200)
@@ -39,4 +42,4 @@ shape = SubResource("RectangleShape2D_lvolf")
 position = Vector2(471, 198)
 
 [node name="ExplosionField" parent="." instance=ExtResource("7_d5mdf")]
-position = Vector2(620, 405)
+position = Vector2(999, 607)
