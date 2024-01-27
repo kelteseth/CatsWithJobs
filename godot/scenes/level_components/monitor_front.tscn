@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://fjnd4wckitna"]
+[gd_scene load_steps=4 format=3 uid="uid://fjnd4wckitna"]
 
 [ext_resource type="Script" path="res://scenes/level_components/component_interaction.gd" id="1_jc864"]
 [ext_resource type="Texture2D" uid="uid://dqsc7a8cqwc08" path="res://assets/monitor.png" id="1_kke0y"]
+[ext_resource type="AudioStream" uid="uid://dvp01qfukbrsl" path="res://assets/Sounds/Items/monitor_crash.ogg" id="3_c1gxd"]
 
 [node name="MonitorFront" type="RigidBody2D"]
 collision_layer = 4
+max_contacts_reported = 4
+contact_monitor = true
 script = ExtResource("1_jc864")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -16,3 +19,8 @@ polygon = PackedVector2Array(86.9211, 98.1316, 211.974, 98.1316, 211.974, 157.18
 position = Vector2(46, -31)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_kke0y")
+
+[node name="AudioStreamPlayerCollide" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c1gxd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
