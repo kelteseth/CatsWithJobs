@@ -2,16 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://ghijmrb3652g" path="res://assets/monitor_back.png" id="1_5xnp3"]
 
-[node name="MonitorFront" type="Node2D"]
+[node name="MonitorFront" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(46, -19)
+scale = Vector2(0.12, 0.12)
+polygon = PackedVector2Array(86.9211, 98.1316, 211.974, 98.1316, 211.974, 157.184, -218.763, 157.184, -218.842, 100.737, -107.684, 100.737, -107.605, 52.9736, -382.026, 52.9736, -378.553, -419.447, 361.342, -419.447, 361.342, 52.9736, 86.9211, 52.9736)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(46, -31)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_5xnp3")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
-position = Vector2(-0.0789795, 99.8684)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/RigidBody2D"]
-position = Vector2(0.079, 0.131577)
-polygon = PackedVector2Array(86.9211, 98.1316, 211.974, 98.1316, 211.974, 157.184, -218.763, 157.184, -218.842, 100.737, -107.684, 100.737, -107.605, 52.9736, -382.026, 52.9736, -378.553, -419.447, 361.342, -419.447, 361.342, 52.9736, 86.9211, 52.9736)

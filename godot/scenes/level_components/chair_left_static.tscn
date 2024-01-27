@@ -2,18 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bmqcwe1la4gsg" path="res://assets/chair_left.png" id="1_aaftx"]
 
-[node name="ChairLeft" type="Node2D"]
+[node name="ChairLeft" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(29.9905, -60.0158)
+scale = Vector2(0.12, 0.12)
+polygon = PackedVector2Array(-8.25435, 391.798, -8.25435, 116.798, -233.254, 116.798, -233.254, 16.7982, 283.412, 16.7982, 300.079, -66.5351, 208.412, -83.2018, 283.412, -558.202, 400.079, -541.535, 300.079, 116.798, 58.4123, 116.798, 58.4123, 391.798, 233.412, 391.798, 233.412, 491.798, -174.921, 491.798, -174.921, 391.798)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(30, -72)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("1_aaftx")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-250, 600)
-scale = Vector2(8.33333, 8.33333)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(29.9905, -60.0158)
-scale = Vector2(0.12, 0.12)
-polygon = PackedVector2Array(-8.25435, 391.798, -8.25435, 116.798, -233.254, 116.798, -233.254, 16.7982, 283.412, 16.7982, 300.079, -66.5351, 208.412, -83.2018, 283.412, -558.202, 400.079, -541.535, 300.079, 116.798, 58.4123, 116.798, 58.4123, 391.798, 233.412, 391.798, 233.412, 491.798, -174.921, 491.798, -174.921, 391.798)

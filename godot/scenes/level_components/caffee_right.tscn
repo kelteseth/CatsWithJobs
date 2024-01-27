@@ -2,15 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://vjmvcwl6vntc" path="res://assets/coffee_left.png" id="1_uwc6u"]
 
-[node name="CaffeeLeft" type="Node2D"]
+[node name="CaffeeLeft" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(15.9961, -11.0066)
+scale = Vector2(0.05, 0.05)
+polygon = PackedVector2Array(-263.828, -199.971, 127.482, -199.971, 136.582, -181.771, 227.585, -190.871, 309.487, -172.67, 364.088, -108.968, 382.289, 9.33447, 354.988, 109.437, 273.086, 173.139, 191.184, 191.339, 118.382, 164.039, 54.6804, 209.54, 18.2794, 227.74, -163.725, 227.74, -272.928, 154.938, -309.329, 36.6353, -309.329, -90.7681, -282.028, -172.67)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(16, -16)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_uwc6u")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
-position = Vector2(-0.0789763, 99.8684)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/RigidBody2D"]
-polygon = PackedVector2Array(-263.828, -199.971, 127.482, -199.971, 136.582, -181.771, 227.585, -190.871, 309.487, -172.67, 364.088, -108.968, 382.289, 9.33447, 354.988, 109.437, 273.086, 173.139, 191.184, 191.339, 118.382, 164.039, 54.6804, 209.54, 18.2794, 227.74, -163.725, 227.74, -272.928, 154.938, -309.329, 36.6353, -309.329, -90.7681, -282.028, -172.67)
