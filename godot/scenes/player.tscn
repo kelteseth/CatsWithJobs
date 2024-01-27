@@ -1,49 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=7 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
 [ext_resource type="Texture2D" uid="uid://dp7o0pwa0vlcb" path="res://assets/cat_one_left.png" id="3_3ok0d"]
 [ext_resource type="Texture2D" uid="uid://xnu2v23bl4uy" path="res://assets/cat_one_right.png" id="3_loayj"]
+[ext_resource type="PackedScene" uid="uid://cyrxxci5jjgl1" path="res://scenes/cat_body.tscn" id="5_3jwx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
-size = Vector2(92.5, 141.25)
-
-[sub_resource type="Animation" id="Animation_0aown"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerImage:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(50.25, 75.1151)]
-}
-
-[sub_resource type="Animation" id="Animation_oicw5"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerImage:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(50.25, 75.1151), Vector2(50.25, 64.385), Vector2(50.25, 75.1151)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6cbu"]
-_data = {
-"RESET": SubResource("Animation_0aown"),
-"idle": SubResource("Animation_oicw5")
-}
+size = Vector2(80.5, 122.25)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 collision_mask = 3
@@ -59,15 +23,7 @@ follow_target = NodePath("..")
 limit_margin = Vector4(0, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(46.75, 72.375)
+position = Vector2(40.75, 62.875)
 shape = SubResource("RectangleShape2D_bi7k1")
 
-[node name="PlayerImage" type="Sprite2D" parent="." groups=["Persist"]]
-position = Vector2(50.25, 75.1151)
-scale = Vector2(0.276025, 0.276025)
-texture = ExtResource("3_3ok0d")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_a6cbu")
-}
+[node name="CatBody" parent="." instance=ExtResource("5_3jwx6")]

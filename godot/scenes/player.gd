@@ -21,17 +21,17 @@ var mass = 1
 
 func set_player_active(is_active):
 	input_active = is_active
-	var idle_anim = animation_player.get_animation("idle")
+	#var idle_anim = animation_player.get_animation("animaton_idle")
 	if is_active:
 		phantom_camera.set_priority(1)
 		last_position = position
 		total_distance_moved = 0
-		animation_player.play("idle")
-		idle_anim.loop_mode = Animation.LOOP_LINEAR
+		#animation_player.play("animaton_idle")
+		#idle_anim.loop_mode = Animation.LOOP_LINEAR
 	else:
 		phantom_camera.set_priority(0)
 		total_distance_moved = 0
-		animation_player.stop()
+		#animation_player.stop()
 		
 func calc_distance_traveled():
 	var distance_this_frame = position.distance_to(last_position)
@@ -75,10 +75,6 @@ func _physics_process(delta):
 
 	if direction != 0:
 		velocity.x = direction * SPEED
-		if direction < 0:
-			player_image.texture = plazer_image_left
-		if direction > 0:
-			player_image.texture = plazer_image_right
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
