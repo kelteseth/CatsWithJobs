@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfkacg2hluwmi"]
+
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
+[ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
+[ext_resource type="PackedScene" uid="uid://ci4ug66dtxqpv" path="res://scenes/level_components/wall.tscn" id="2_t0e4h"]
+[ext_resource type="PackedScene" uid="uid://78vtqqruy2hp" path="res://scenes/level_components/wall_with_cutout.tscn" id="3_q2ide"]
+[ext_resource type="PackedScene" uid="uid://be8fvckvl2om2" path="res://scenes/level_components/elevator_meowder.tscn" id="5_d5ovh"]
+
+[sub_resource type="Animation" id="Animation_ewyvc"]
+resource_name = "elevator_movement"
+length = 4.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_rtl3c"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmyxs"]
+_data = {
+"RESET": SubResource("Animation_rtl3c"),
+"elevator_movement": SubResource("Animation_ewyvc")
+}
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_vkdvl")
+
+[node name="etage_3" parent="." instance=ExtResource("1_y5vmu")]
+position = Vector2(2635, -403)
+metadata/_edit_group_ = true
+
+[node name="Ground7" parent="etage_3" instance=ExtResource("1_y5vmu")]
+position = Vector2(-602, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground5" parent="etage_3" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1203, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground4" parent="etage_3" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1805, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground" parent="etage_3" instance=ExtResource("1_y5vmu")]
+position = Vector2(-2407, 0)
+metadata/_edit_group_ = true
+
+[node name="etage_2" parent="." instance=ExtResource("1_y5vmu")]
+position = Vector2(2635, 120)
+metadata/_edit_group_ = true
+
+[node name="Ground7" parent="etage_2" instance=ExtResource("1_y5vmu")]
+position = Vector2(-602, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground5" parent="etage_2" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1203, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground4" parent="etage_2" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1805, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground" parent="etage_2" instance=ExtResource("1_y5vmu")]
+position = Vector2(-2407, 0)
+metadata/_edit_group_ = true
+
+[node name="etage_1" parent="." instance=ExtResource("1_y5vmu")]
+position = Vector2(2636, 643)
+metadata/_edit_group_ = true
+
+[node name="Ground7" parent="etage_1" instance=ExtResource("1_y5vmu")]
+position = Vector2(-602, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground5" parent="etage_1" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1203, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground4" parent="etage_1" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1805, 0)
+metadata/_edit_group_ = true
+
+[node name="Ground" parent="etage_1" instance=ExtResource("1_y5vmu")]
+position = Vector2(-2407, 0)
+metadata/_edit_group_ = true
+
+[node name="Wall" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3199, 562)
+
+[node name="Wall2" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3, 481)
+
+[node name="WallWithCutout" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(232, 564)
+
+[node name="Wall3" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3, 39)
+
+[node name="WallWithCutout2" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(231, 41)
+
+[node name="Wall4" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3200, 41)
+
+[node name="Wall5" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3, 922)
+
+[node name="Ground3" parent="." instance=ExtResource("1_y5vmu")]
+position = Vector2(-376, 644)
+
+[node name="WallWithCutout3" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(2970, 42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bmyxs")
+}
+
+[node name="Elevator" parent="." instance=ExtResource("5_d5ovh")]
+position = Vector2(48, 576)
