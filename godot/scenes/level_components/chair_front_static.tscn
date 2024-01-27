@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dir5xb1465dgg"]
 
-[ext_resource type="Texture2D" uid="uid://b6sjmtlqco7ki" path="res://assets/chair_front.png" id="1_kfpxj"]
+[ext_resource type="Texture2D" uid="uid://jdiaw8omtegs" path="res://assets/chair_front.png" id="1_kfpxj"]
 
 [node name="ChairLeft" type="StaticBody2D"]
 

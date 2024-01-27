@@ -13,6 +13,7 @@ script = ExtResource("1_2yk2d")
 shape = SubResource("CircleShape2D_k88vx")
 
 [node name="LifeTimer" type="Timer" parent="."]
+wait_time = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0683333, 0.0703431)

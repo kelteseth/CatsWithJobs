@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://g5kf5fww15ml" path="res://assets/flame_01.png" id="1_0nhfk"]
 [ext_resource type="Texture2D" uid="uid://db1bxo2p2kk4n" path="res://assets/flame_02.png" id="1_brela"]
-[ext_resource type="Material" uid="uid://ck4jmvgc1qfjc" path="res://interactions/flame/flames_process_material.tres" id="1_dihtd"]
+[ext_resource type="Material" uid="uid://dwtrmq1cwpwta" path="res://interactions/flame/flames_process_material.tres" id="1_dihtd"]
 [ext_resource type="Texture2D" uid="uid://q3xhxdwyvp10" path="res://assets/flame_03.png" id="4_qiar2"]
 
 [node name="Flames" type="GPUParticles2D"]

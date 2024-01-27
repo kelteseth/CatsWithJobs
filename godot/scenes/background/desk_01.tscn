@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxthhyt5ej1me"]
+[gd_scene load_steps=5 format=3 uid="uid://dagyv5rgxbusa"]
 
-[ext_resource type="Texture2D" uid="uid://duguq2n5yp0ub" path="res://assets/desk.png" id="1_tnlx5"]
-[ext_resource type="Texture2D" uid="uid://bmqcwe1la4gsg" path="res://assets/chair_left.png" id="2_6akw0"]
+[ext_resource type="Texture2D" uid="uid://dmqc8o48mru2f" path="res://assets/desk.png" id="1_tnlx5"]
+[ext_resource type="Texture2D" uid="uid://cngy45whibla6" path="res://assets/chair_left.png" id="2_6akw0"]
 [ext_resource type="Texture2D" uid="uid://7w6esrentc4j" path="res://assets/plant_01.png" id="3_k2qlc"]
 [ext_resource type="Texture2D" uid="uid://dqsc7a8cqwc08" path="res://assets/monitor.png" id="4_miu6n"]
 
