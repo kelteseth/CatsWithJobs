@@ -9,6 +9,8 @@
 size = Vector2(128, 128)
 
 [node name="Box" type="RigidBody2D"]
+max_contacts_reported = 4
+contact_monitor = true
 script = ExtResource("1_skdys")
 vfx_prefab = ExtResource("2_vdjpo")
 flame_field_prefab = ExtResource("3_ioir2")
@@ -19,3 +21,5 @@ texture = ExtResource("4_u1hnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pxlya")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

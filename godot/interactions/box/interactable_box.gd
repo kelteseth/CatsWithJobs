@@ -26,8 +26,9 @@ func react_to_fire(damage_per_second: float):
 			call_deferred("add_child", instance)
 			self.spawned_flame_field = instance
 	else:
-		call_deferred("remove_child", self.spawned_flame_vfx)
-		call_deferred("remove_child", self.spawned_flame_field)
+		call_deferred("queue_free", self.spawned_flame_vfx)
+		call_deferred("queue_free", self.spawned_flame_field)
+
 
 func react_to_force():
 	pass
@@ -54,3 +55,8 @@ func _process(delta):
 
 func _integrate_forces(state):
 	apply_central_force(current_gravity_force)
+
+
+func _on_body_entered(body):
+	print("TOOD tell hit body to take damage")
+
