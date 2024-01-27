@@ -144,7 +144,8 @@ func shoot():
 		bullet.position = gun_pos_left.global_position
 		bullet.rotation = gun_pos_left.global_rotation
 	get_tree().current_scene.add_child(bullet)
-
+	
+	$AudioStreamPlayerShoot.play(0.05)
 	
 	# Calculate the direction from the gun to the target cursor
 	var direction = (target_cursor.global_position - gun_pos_left.global_position).normalized()
