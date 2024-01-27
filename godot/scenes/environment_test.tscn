@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bukurk3lyylis"]
+[gd_scene load_steps=7 format=3 uid="uid://bukurk3lyylis"]
 
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="4_0fehj"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="5_0w4py"]
-[ext_resource type="PackedScene" uid="uid://bjtvxgek4tdf" path="res://interactions/gravity_fields/gravity_field.tscn" id="5_ccgh1"]
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="6_pcw00"]
 [ext_resource type="PackedScene" uid="uid://dujvk0fq3cq0x" path="res://interactions/fire_fields/flame_field.tscn" id="6_vc8o3"]
 [ext_resource type="PackedScene" uid="uid://cfwaeh5078325" path="res://interactions/explosion_fields/explosion_field.tscn" id="7_d5mdf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvolf"]
-size = Vector2(338, 201)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sadly"]
+size = Vector2(1178, 124)
 
 [node name="IngameScene" type="Node2D"]
 
@@ -29,17 +28,27 @@ position = Vector2(141, 326)
 [node name="Box3" parent="." instance=ExtResource("6_pcw00")]
 position = Vector2(218, 71)
 
+[node name="Box4" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(465, 2)
+
+[node name="Box5" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(309, -65)
+
+[node name="Box6" parent="." instance=ExtResource("6_pcw00")]
+position = Vector2(192, -227)
+
 [node name="Box2" parent="." instance=ExtResource("6_pcw00")]
-position = Vector2(166, 477)
-
-[node name="GravityField" parent="." instance=ExtResource("5_ccgh1")]
-position = Vector2(1112, 200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
-shape = SubResource("RectangleShape2D_lvolf")
+position = Vector2(444, 209)
 
 [node name="FlameField" parent="." instance=ExtResource("6_vc8o3")]
-position = Vector2(471, 198)
+position = Vector2(578, 582)
 
 [node name="ExplosionField" parent="." instance=ExtResource("7_d5mdf")]
 position = Vector2(999, 607)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(579, 52)
+shape = SubResource("RectangleShape2D_sadly")

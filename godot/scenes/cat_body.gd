@@ -11,6 +11,8 @@ extends Node2D
 @onready var body: Sprite2D = $Body
 @onready var tail: Sprite2D = $Tail
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+enum State {IDLE,RUN}
+var current_state: State = State.IDLE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,6 +30,12 @@ func _ready():
 		var animation = animation_player.get_animation(current_animation_name)
 		animation.loop_mode = Animation.LOOP_LINEAR
 
+func set_state(state):
+	if state == State.IDLE:
+		animation_player.play("animation_idle")
+	if state == State.RUN:
+		animation_player.play("animation_idle")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
