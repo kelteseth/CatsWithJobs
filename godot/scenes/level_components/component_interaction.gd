@@ -7,3 +7,6 @@ func react_to_gravity(direction: Vector2, strength: float):
 
 func _integrate_forces(state):
 	apply_central_force(current_gravity_force)
+
+func _on_body_entered(body):
+	$AudioStreamPlayerCollide.play()
