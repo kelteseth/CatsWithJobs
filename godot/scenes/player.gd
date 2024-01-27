@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -600.0
 @export var max_player_units_moved: float = 1000
 @export var phantom_camera: PhantomCamera2D
 @export var player_id = 0
@@ -16,8 +16,8 @@ var total_distance_moved: float = 0.0
 signal turn_done(player_id)
 signal player_moved(player_id, units_moved)
 
-var gravity_force = Vector2()
-var mass = 1
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func set_player_active(is_active):
 	input_active = is_active
@@ -47,9 +47,6 @@ func calc_distance_traveled():
 func _ready():
 	last_position = position
 
-
-func react_to_gravity(direction: Vector2, strength: float):
-	gravity_force = direction * strength * mass
 	
 func _physics_process(delta):
 	if not input_active:
@@ -57,7 +54,7 @@ func _physics_process(delta):
 
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += gravity_force * delta
+		velocity.y += gravity * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():

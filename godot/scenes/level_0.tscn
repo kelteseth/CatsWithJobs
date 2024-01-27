@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqhh8x5cuaeyq"]
+[gd_scene load_steps=14 format=3 uid="uid://dqhh8x5cuaeyq"]
 
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_8uhdl"]
 [ext_resource type="PackedScene" uid="uid://78vtqqruy2hp" path="res://scenes/level_components/wall_with_cutout.tscn" id="2_p0oaj"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d2n03jbt8vebu" path="res://scenes/level_components/monitor_back.tscn" id="9_j68s5"]
 [ext_resource type="PackedScene" uid="uid://ddm6nevqix3ui" path="res://scenes/level_components/desk_side.tscn" id="10_6svdb"]
 [ext_resource type="PackedScene" uid="uid://c6sojpw37vf0l" path="res://scenes/level_components/chair_front.tscn" id="11_syqyi"]
-[ext_resource type="PackedScene" uid="uid://bdxmcwsyl8y7a" path="res://scenes/level_components/ladder.tscn" id="12_f0cio"]
+[ext_resource type="PackedScene" uid="uid://wkvyfprv7y1e" path="res://scenes/level_components/ladder.tscn" id="12_f0cio"]
+[ext_resource type="PackedScene" uid="uid://bo8ymmae1prge" path="res://scenes/level_components/chair_left.tscn" id="13_bmdl8"]
 
 [node name="Level01" type="Node2D"]
 
@@ -43,16 +44,16 @@ position = Vector2(44, 336)
 position = Vector2(229, 568)
 
 [node name="Ground5" parent="." instance=ExtResource("1_8uhdl")]
-position = Vector2(835, 202)
+position = Vector2(831, 125)
 
 [node name="Ground6" parent="." instance=ExtResource("1_8uhdl")]
-position = Vector2(233, 201)
+position = Vector2(228, 126)
 
 [node name="Ground7" parent="." instance=ExtResource("1_8uhdl")]
-position = Vector2(1429, 242)
+position = Vector2(1435, 124)
 
 [node name="Ground8" parent="." instance=ExtResource("1_8uhdl")]
-position = Vector2(2031, 242)
+position = Vector2(2039, 129)
 
 [node name="Ground2" parent="." instance=ExtResource("1_8uhdl")]
 position = Vector2(827, 646)
@@ -82,7 +83,16 @@ position = Vector2(1526, 566)
 position = Vector2(1430, 566)
 
 [node name="Ladder2" parent="." instance=ExtResource("12_f0cio")]
-position = Vector2(864, 379)
+position = Vector2(1835, 382)
 
 [node name="Ladder" parent="." instance=ExtResource("12_f0cio")]
-position = Vector2(796, 565)
+position = Vector2(1767, 568)
+
+[node name="ChairLeft2" parent="." instance=ExtResource("13_bmdl8")]
+position = Vector2(361, 550)
+
+[node name="ChairLeft3" parent="." instance=ExtResource("13_bmdl8")]
+position = Vector2(314, 415)
+
+[node name="ChairLeft4" parent="." instance=ExtResource("13_bmdl8")]
+position = Vector2(450, 351)

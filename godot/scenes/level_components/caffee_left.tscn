@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dai6p6egy1swj" path="res://assets/coffee_right.png" id="1_756iy"]
 
 [node name="CaffeeLeft" type="RigidBody2D"]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(20, -10.9949)

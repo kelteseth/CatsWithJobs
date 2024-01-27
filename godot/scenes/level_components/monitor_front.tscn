@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://fjnd4wckitna"]
+[gd_scene load_steps=3 format=3 uid="uid://fjnd4wckitna"]
 
+[ext_resource type="Script" path="res://scenes/level_components/component_interaction.gd" id="1_jc864"]
 [ext_resource type="Texture2D" uid="uid://dqsc7a8cqwc08" path="res://assets/monitor.png" id="1_kke0y"]
 
 [node name="MonitorFront" type="RigidBody2D"]
+collision_layer = 4
+script = ExtResource("1_jc864")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(46, -19)

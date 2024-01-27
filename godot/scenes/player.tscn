@@ -10,7 +10,6 @@
 size = Vector2(80.5, 122.25)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
-collision_mask = 3
 script = ExtResource("1_2ppkv")
 phantom_camera = NodePath("PhantomCamera2D")
 plazer_image_left = ExtResource("3_3ok0d")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfy32oqnue54s"]
+[gd_scene load_steps=2 format=3 uid="uid://da1clu5ovn6xc"]
 
 [ext_resource type="Texture2D" uid="uid://7w6esrentc4j" path="res://assets/plant_01.png" id="1_p1o8t"]
 
 [node name="CaffeeLeft" type="RigidBody2D"]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(6.625, -6.49567)
