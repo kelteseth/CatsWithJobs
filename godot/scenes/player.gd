@@ -12,11 +12,13 @@ const JUMP_VELOCITY = -600.0
 @onready var gun_pos_right = $GunPosRight
 @onready var gun_pos_left = $GunPosLeft
 @onready var target_cursor:Sprite2D = $TargetCursor
+@onready var bullet_scene = preload("res://scenes/bullet.tscn")
 var input_active = false
 var last_position = Vector2()
 var total_distance_moved: float = 0.0
 var cursor_speed = 200
 
+var movement_direction = MovementDirection.INVALID
 enum MovementDirection {INVALID, LEFT, RIGHT}
 
 signal turn_done(player_id)
@@ -48,8 +50,12 @@ func calc_distance_traveled():
 	
 func _ready():
 	last_position = position
+	self.visible = false
+	await get_tree().create_timer(randf_range(0.5, 2.0)).timeout
+	$AudioStreamPlayerSpawnSound.play()
+	self.visible = true
 
-func move_cusor(delta: float, movement_direction: MovementDirection):
+func move_cusor(delta: float):
 	# Construct input action names based on player_id
 	var move_right_action = "target_right_p" + str(player_id)
 	var move_left_action = "target_left_p" + str(player_id)
@@ -93,10 +99,10 @@ func _physics_process(delta):
 	if input_active and Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AudioStreamPlayerJump.play(0.05)
+		
 
 	# Handle movement/deceleration.
 	var direction = 0
-	var movement_direction = MovementDirection.INVALID
 	if input_active and Input.is_action_pressed("move_left_p" + str(player_id)):
 		direction -= 1
 		if not $AudioStreamPlayerSteps.playing:
@@ -112,9 +118,13 @@ func _physics_process(delta):
 		cat_body_right.visible = true
 		movement_direction = MovementDirection.RIGHT
 		
+	if input_active and Input.is_action_just_pressed("shoot_p" + str(player_id)):
+		shoot()
+
 	calc_distance_traveled()
+	
 	if input_active:
-		move_cusor(delta,movement_direction)
+		move_cusor(delta)
 
 	if direction != 0:
 		velocity.x = direction * SPEED
@@ -127,4 +137,24 @@ func _physics_process(delta):
 	if total_distance_moved >= max_player_units_moved:
 		input_active = false
 		turn_done.emit(player_id)
+
+func shoot():
+	print("shoot",movement_direction)
+	var bullet = bullet_scene.instantiate()
+	if movement_direction == MovementDirection.LEFT || movement_direction == MovementDirection.INVALID:
+		bullet.position = gun_pos_right.global_position
+		bullet.rotation = gun_pos_right.global_rotation
+	if movement_direction == MovementDirection.RIGHT:
+		bullet.position = gun_pos_left.global_position
+		bullet.rotation = gun_pos_left.global_rotation
+	get_tree().current_scene.add_child(bullet)
+	
+	$AudioStreamPlayerShoot.play(0.05)
+	
+	# Calculate the direction from the gun to the target cursor
+	var direction = (target_cursor.global_position - gun_pos_left.global_position).normalized()
+	# Define the impulse strength (adjust as necessary)
+	var impulse_strength = 1000
+	# Apply the impulse to the bullet
+	bullet.apply_impulse( direction * impulse_strength)
 

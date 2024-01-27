@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=17 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
@@ -11,11 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://4ip4d8f4hx43" path="res://assets/cat_one_right_body_action.png" id="9_8xun8"]
 [ext_resource type="Texture2D" uid="uid://cw5tvu08ga06w" path="res://assets/gun.png" id="10_yxm58"]
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
-[ext_resource type="AudioStream" uid="uid://bccnnuxegty61" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
+[ext_resource type="AudioStream" uid="uid://bmab8j8vdsvsw" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
 [ext_resource type="AudioStream" uid="uid://cstwvjwi08wau" path="res://assets/Sounds/Cat/jump.ogg" id="13_4qxdn"]
+[ext_resource type="AudioStream" uid="uid://ciiaebs2sdm3g" path="res://assets/Sounds/Items/gun05_single_shot.ogg" id="14_vtar0"]
+[ext_resource type="AudioStream" uid="uid://bckipjxvtsvyu" path="res://assets/Sounds/Music/cats_spawn.ogg" id="15_bfcj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
-size = Vector2(80.5, 122.25)
+size = Vector2(30, 114)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 script = ExtResource("1_2ppkv")
@@ -30,7 +32,7 @@ follow_target = NodePath("..")
 limit_margin = Vector4(0, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(40.75, 62.875)
+position = Vector2(52, 75)
 shape = SubResource("RectangleShape2D_bi7k1")
 
 [node name="CatBodyLeft" parent="." instance=ExtResource("5_3jwx6")]
@@ -70,3 +72,11 @@ volume_db = 8.0
 
 [node name="AudioStreamPlayerJump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_4qxdn")
+
+[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_vtar0")
+volume_db = 15.0
+
+[node name="AudioStreamPlayerSpawnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_bfcj2")
+volume_db = 12.0
