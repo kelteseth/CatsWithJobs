@@ -20,6 +20,8 @@ func react_to_fire(damage_per_second: float, field: Node):
 		return
 		
 	if damage_per_second > 0:
+		$AudioStreamPlayer2D.play()
+		
 		self.burn_sources += 1
 		if self.burn_sources == 1:
 			var instance
@@ -33,6 +35,7 @@ func react_to_fire(damage_per_second: float, field: Node):
 	else:
 		self.burn_sources -= 1
 		if self.burn_sources == 0:
+			$AudioStreamPlayer2D.stop()
 			self.spawned_flame_vfx.queue_free()
 			self.spawned_flame_field.queue_free()
 
