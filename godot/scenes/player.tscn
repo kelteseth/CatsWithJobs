@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cstwvjwi08wau" path="res://assets/Sounds/Cat/jump.ogg" id="13_4qxdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
-size = Vector2(80.5, 122.25)
+size = Vector2(30, 114)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 script = ExtResource("1_2ppkv")
@@ -30,7 +30,7 @@ follow_target = NodePath("..")
 limit_margin = Vector4(0, 0, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(40.75, 62.875)
+position = Vector2(52, 75)
 shape = SubResource("RectangleShape2D_bi7k1")
 
 [node name="CatBodyLeft" parent="." instance=ExtResource("5_3jwx6")]
