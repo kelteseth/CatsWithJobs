@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://r7v5qnxkdjuv"]
+[gd_scene load_steps=3 format=3 uid="uid://ehve3nkl3tl5"]
 
-[ext_resource type="Texture2D" uid="uid://dj1jmutdphg1t" path="res://assets/carton_closed.png" id="1_qg21l"]
+[ext_resource type="Texture2D" uid="uid://dbqvrowlgpnnw" path="res://assets/carton_closed.png" id="1_qg21l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v5t2"]
 size = Vector2(64, 57)
