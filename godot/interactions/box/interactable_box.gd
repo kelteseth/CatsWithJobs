@@ -67,6 +67,10 @@ func _process(delta):
 		self.queue_free()
 	
 	self.modulate = Color.WHITE * self.current_health * 0.01
+	var red = clamp(self.modulate.r, 0.3, 1.0)
+	var green = clamp(self.modulate.g, 0.3, 1.0)
+	var blue = clamp(self.modulate.b, 0.3, 1.0)
+	self.modulate = Color(red, green, blue)
 
 func _integrate_forces(state):
 	apply_central_force(current_gravity_force)

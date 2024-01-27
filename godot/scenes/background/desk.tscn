@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuwyf3brr2iqr"]
+
+[ext_resource type="Texture2D" uid="uid://c01brxh40sm0c" path="res://assets/desk_side.png" id="1_lvbqh"]
+[ext_resource type="Texture2D" uid="uid://bmqcwe1la4gsg" path="res://assets/chair_left.png" id="2_8bvo8"]
+[ext_resource type="Texture2D" uid="uid://dqsc7a8cqwc08" path="res://assets/monitor.png" id="3_ocllv"]
+[ext_resource type="Texture2D" uid="uid://7w6esrentc4j" path="res://assets/plant_01.png" id="4_wgwai"]
+
+[node name="Desk" type="Node2D"]
+
+[node name="ChairLeft" type="Sprite2D" parent="."]
+position = Vector2(46, -59)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8bvo8")
+
+[node name="DeskSide" type="Sprite2D" parent="."]
+position = Vector2(24, -40)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_lvbqh")
+
+[node name="Monitor" type="Sprite2D" parent="."]
+position = Vector2(24, -102)
+scale = Vector2(0.0750284, 0.1)
+texture = ExtResource("3_ocllv")
+
+[node name="Plant01" type="Sprite2D" parent="."]
+position = Vector2(12, -92)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wgwai")

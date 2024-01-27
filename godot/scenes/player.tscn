@@ -43,22 +43,22 @@ body_texture = ExtResource("7_r6kqh")
 body_action_texture = ExtResource("9_8xun8")
 
 [node name="GunPosLeft" type="Node2D" parent="."]
-position = Vector2(8, 94)
+visible = false
+position = Vector2(81, 90)
 
 [node name="GunLeft" type="Sprite2D" parent="GunPosLeft"]
-position = Vector2(-15, -14)
+position = Vector2(0.999998, -2)
 scale = Vector2(0.406667, 0.406667)
 texture = ExtResource("10_yxm58")
-flip_h = true
 
 [node name="GunPosRight" type="Node2D" parent="."]
-visible = false
-position = Vector2(88, 94)
+position = Vector2(11, 85)
 
 [node name="GunRight" type="Sprite2D" parent="GunPosRight"]
-position = Vector2(18, -13)
+position = Vector2(2.38419e-07, 4)
 scale = Vector2(0.406667, 0.406667)
 texture = ExtResource("10_yxm58")
+flip_v = true
 
 [node name="TargetCursor" type="Sprite2D" parent="."]
 scale = Vector2(0.118333, 0.118333)
