@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=11 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c5vyoo400vr0u" path="res://ui/overlays/ingame_overlay.tscn" id="5_yrup4"]
 [ext_resource type="PackedScene" uid="uid://b3kdd27qyixd8" path="res://scenes/player.tscn" id="6_megu6"]
 [ext_resource type="PackedScene" uid="uid://bfkacg2hluwmi" path="res://scenes/level_1.tscn" id="7_dr253"]
-[ext_resource type="AudioStream" uid="uid://b67mnal8buonv" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
-[ext_resource type="AudioStream" uid="uid://csvly5xbh4f2l" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
+[ext_resource type="AudioStream" uid="uid://cxaswq71s52so" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
+[ext_resource type="AudioStream" uid="uid://by4e6wbhrohwy" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
+[ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="10_e06k2"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
@@ -64,3 +65,6 @@ attenuation = 0.00808801
 stream = ExtResource("9_v6kq1")
 volume_db = 10.0
 autoplay = true
+
+[node name="Box" parent="." instance=ExtResource("10_e06k2")]
+position = Vector2(1133, 280)
