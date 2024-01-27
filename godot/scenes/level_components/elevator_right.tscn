@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdktr40l24a6"]
+
+[ext_resource type="Texture2D" uid="uid://4n0kjfs1w4fk" path="res://assets/elevator.png" id="1_i6w72"]
+
+[node name="Elevator" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(96, -112)
+scale = Vector2(0.07, 0.07)
+polygon = PackedVector2Array(-1357.14, 1600, 1328.57, 1571.43, 1328.57, -1557.14, -1385.71, -1557.14, -1385.71, -1357.14, 1085.71, -1357.14, 1100, 1414.29, -1371.43, 1414.29)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(96, -112)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_i6w72")
+flip_h = true
