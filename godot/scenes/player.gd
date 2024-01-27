@@ -51,6 +51,7 @@ func _ready():
 func react_to_gravity(direction: Vector2, strength: float):
 	gravity_force = direction * strength * mass
 	
+	
 func _physics_process(delta):
 	if not input_active:
 		return 
@@ -70,15 +71,19 @@ func _physics_process(delta):
 	var direction = 0
 	if Input.is_action_pressed("move_left_p" + str(player_id)):
 		direction -= 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 	if Input.is_action_pressed("move_right_p" + str(player_id)):
 		direction += 1
+		if not $AudioStreamPlayerSteps.playing:
+			$AudioStreamPlayerSteps.play()
 
 	if direction != 0:
 		velocity.x = direction * SPEED
 		if direction < 0:
 			player_image.texture = plazer_image_left
 		if direction > 0:
-			player_image.texture = plazer_image_right
+			player_image.texture = plazer_image_right 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

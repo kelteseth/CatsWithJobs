@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=10 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
 [ext_resource type="Texture2D" uid="uid://dp7o0pwa0vlcb" path="res://assets/cat_one_left.png" id="3_3ok0d"]
 [ext_resource type="Texture2D" uid="uid://xnu2v23bl4uy" path="res://assets/cat_one_right.png" id="3_loayj"]
+[ext_resource type="AudioStream" uid="uid://bmab8j8vdsvsw" path="res://assets/Sounds/Cat/slow_steps.ogg" id="5_r2bst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(92.5, 141.25)
@@ -70,3 +71,6 @@ texture = ExtResource("3_3ok0d")
 libraries = {
 "": SubResource("AnimationLibrary_a6cbu")
 }
+
+[node name="AudioStreamPlayerSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r2bst")

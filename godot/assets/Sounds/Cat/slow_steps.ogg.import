@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/slow_steps.ogg-081a1a1f0b118d65f5040a91fffe64
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

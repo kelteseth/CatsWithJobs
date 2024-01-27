@@ -145,6 +145,7 @@ shape = SubResource("RectangleShape2D_ibtnd")
 [node name="AudioStreamPlayerBackgroundnMusic" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("8_d0tef")
+volume_db = -10.0
 autoplay = true
 
 [node name="AudioStreamPlayerAmbience" type="AudioStreamPlayer2D" parent="."]
