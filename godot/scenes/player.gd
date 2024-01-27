@@ -9,6 +9,8 @@ const JUMP_VELOCITY = -600.0
 @export var plazer_image_right: CompressedTexture2D
 @onready var animation_player = $AnimationPlayer
 @onready var player_image = $PlayerImage
+@onready var cat_body_left = $CatBodyLeft
+@onready var cat_body_right = $CatBodyRight
 var input_active = false
 var last_position = Vector2()
 var total_distance_moved: float = 0.0
@@ -67,8 +69,12 @@ func _physics_process(delta):
 	var direction = 0
 	if Input.is_action_pressed("move_left_p" + str(player_id)):
 		direction -= 1
+		cat_body_left.visible = true
+		cat_body_right.visible = false
 	if Input.is_action_pressed("move_right_p" + str(player_id)):
 		direction += 1
+		cat_body_left.visible = false
+		cat_body_right.visible = true
 
 	if direction != 0:
 		velocity.x = direction * SPEED

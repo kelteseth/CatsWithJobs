@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=9 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
 [ext_resource type="Texture2D" uid="uid://dp7o0pwa0vlcb" path="res://assets/cat_one_left.png" id="3_3ok0d"]
 [ext_resource type="Texture2D" uid="uid://xnu2v23bl4uy" path="res://assets/cat_one_right.png" id="3_loayj"]
 [ext_resource type="PackedScene" uid="uid://cyrxxci5jjgl1" path="res://scenes/cat_body.tscn" id="5_3jwx6"]
+[ext_resource type="Texture2D" uid="uid://cvtq2bp5wjswr" path="res://assets/cat_one_right_head.png" id="6_jqiee"]
+[ext_resource type="Texture2D" uid="uid://bc2dwg12brnb6" path="res://assets/cat_one_right_body.png" id="7_r6kqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(80.5, 122.25)
@@ -25,4 +27,8 @@ limit_margin = Vector4(0, 0, 0, 0)
 position = Vector2(40.75, 62.875)
 shape = SubResource("RectangleShape2D_bi7k1")
 
-[node name="CatBody" parent="." instance=ExtResource("5_3jwx6")]
+[node name="CatBodyLeft" parent="." instance=ExtResource("5_3jwx6")]
+
+[node name="CatBodyRight" parent="." instance=ExtResource("5_3jwx6")]
+head_texture = ExtResource("6_jqiee")
+body_texture = ExtResource("7_r6kqh")
