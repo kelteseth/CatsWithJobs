@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://lj1yh2n2pnay"]
+
+[ext_resource type="Script" path="res://scenes/pickup.gd" id="1_pc518"]
+[ext_resource type="Texture2D" uid="uid://cbgwvxr2y66e5" path="res://assets/flamethrower_ left.png" id="2_de6dt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he0ab"]
+size = Vector2(206, 60)
+
+[node name="Pickup" type="StaticBody2D"]
+script = ExtResource("1_pc518")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(99, 42)
+scale = Vector2(0.303571, 0.303571)
+texture = ExtResource("2_de6dt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(102, 45)
+shape = SubResource("RectangleShape2D_he0ab")

@@ -18,6 +18,9 @@ var last_position = Vector2()
 var total_distance_moved: float = 0.0
 var cursor_speed = 200
 
+var has_gun = false
+var bullet_count = 5
+
 var movement_direction = MovementDirection.INVALID
 enum MovementDirection {INVALID, LEFT, RIGHT}
 
@@ -78,13 +81,8 @@ func move_cusor(delta: float):
 	# Update the position
 	target_cursor.position += input_vector * speed * delta
 	
-	if movement_direction == MovementDirection.RIGHT:
-		gun_pos_left.visible = true
-		gun_pos_right.visible = false
-
-	if movement_direction == MovementDirection.LEFT:
-		gun_pos_left.visible = false
-		gun_pos_right.visible = true
+	if has_gun:
+		set_gun_enabled(true)
 		
 	gun_pos_right.look_at(target_cursor.global_position)
 	gun_pos_left.look_at(target_cursor.global_position)
@@ -121,7 +119,7 @@ func _physics_process(delta):
 		cat_body_right.visible = true
 		movement_direction = MovementDirection.RIGHT
 		
-	if input_active and Input.is_action_just_pressed("shoot_p" + str(player_id)):
+	if input_active and has_gun and Input.is_action_just_pressed("shoot_p" + str(player_id)):
 		shoot()
 
 	calc_distance_traveled()
@@ -163,3 +161,28 @@ func shoot():
 		bullet.apply_impulse( direction * impulse_strength)
 	
 	$AudioStreamPlayerShoot.play(0.05)
+	bullet_count -= 1
+	print(bullet_count)
+	if bullet_count <= 0:
+		set_gun_enabled(false)
+
+func set_gun_enabled(enabled: bool):
+	has_gun = enabled
+	if has_gun:
+		if movement_direction == MovementDirection.RIGHT:
+			gun_pos_left.visible = true
+			gun_pos_right.visible = false
+
+		if movement_direction == MovementDirection.LEFT:
+			gun_pos_left.visible = false
+			gun_pos_right.visible = true
+	else:
+		gun_pos_left.visible = false
+		gun_pos_right.visible = false
+		
+func _on_pickup_area_2d_body_entered(body):
+	if body.has_method("get_pickup"):
+		body.queue_free()
+		has_gun = true
+		
+	
