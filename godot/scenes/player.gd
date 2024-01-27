@@ -50,6 +50,10 @@ func calc_distance_traveled():
 	
 func _ready():
 	last_position = position
+	self.visible = false
+	await get_tree().create_timer(randf_range(0.5, 2.0)).timeout
+	$AudioStreamPlayerSpawnSound.play()
+	self.visible = true
 
 func move_cusor(delta: float):
 	# Construct input action names based on player_id
