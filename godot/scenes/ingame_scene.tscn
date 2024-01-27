@@ -147,6 +147,7 @@ process_mode = 3
 stream = ExtResource("8_d0tef")
 volume_db = -10.0
 autoplay = true
+attenuation = 0.00808801
 
 [node name="AudioStreamPlayerAmbience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_v6kq1")

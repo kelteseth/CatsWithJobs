@@ -63,7 +63,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump_p" + str(player_id)) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		print("jump")
+		$AudioStreamPlayerJump.play(0.05)
 
 	calc_distance_traveled()
 
