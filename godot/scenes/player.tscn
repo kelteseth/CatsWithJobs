@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=13 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
 [ext_resource type="Texture2D" uid="uid://dp7o0pwa0vlcb" path="res://assets/cat_one_left.png" id="3_3ok0d"]
 [ext_resource type="Texture2D" uid="uid://xnu2v23bl4uy" path="res://assets/cat_one_right.png" id="3_loayj"]
 [ext_resource type="PackedScene" uid="uid://cyrxxci5jjgl1" path="res://scenes/cat_body.tscn" id="5_3jwx6"]
+[ext_resource type="Texture2D" uid="uid://bv5aedbpdkvgx" path="res://assets/cat_one_left_body_action.png" id="6_au6wg"]
 [ext_resource type="Texture2D" uid="uid://cvtq2bp5wjswr" path="res://assets/cat_one_right_head.png" id="6_jqiee"]
 [ext_resource type="Texture2D" uid="uid://bc2dwg12brnb6" path="res://assets/cat_one_right_body.png" id="7_r6kqh"]
+[ext_resource type="Texture2D" uid="uid://4ip4d8f4hx43" path="res://assets/cat_one_right_body_action.png" id="9_8xun8"]
+[ext_resource type="Texture2D" uid="uid://cw5tvu08ga06w" path="res://assets/gun.png" id="10_yxm58"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(80.5, 122.25)
@@ -28,7 +32,32 @@ position = Vector2(40.75, 62.875)
 shape = SubResource("RectangleShape2D_bi7k1")
 
 [node name="CatBodyLeft" parent="." instance=ExtResource("5_3jwx6")]
+body_action_texture = ExtResource("6_au6wg")
 
 [node name="CatBodyRight" parent="." instance=ExtResource("5_3jwx6")]
+visible = false
 head_texture = ExtResource("6_jqiee")
 body_texture = ExtResource("7_r6kqh")
+body_action_texture = ExtResource("9_8xun8")
+
+[node name="GunPosLeft" type="Node2D" parent="."]
+position = Vector2(8, 94)
+
+[node name="GunLeft" type="Sprite2D" parent="GunPosLeft"]
+position = Vector2(-15, -14)
+scale = Vector2(0.406667, 0.406667)
+texture = ExtResource("10_yxm58")
+flip_h = true
+
+[node name="GunPosRight" type="Node2D" parent="."]
+visible = false
+position = Vector2(88, 94)
+
+[node name="GunRight" type="Sprite2D" parent="GunPosRight"]
+position = Vector2(18, -13)
+scale = Vector2(0.406667, 0.406667)
+texture = ExtResource("10_yxm58")
+
+[node name="TargetCursor" type="Sprite2D" parent="."]
+scale = Vector2(0.118333, 0.118333)
+texture = ExtResource("11_y6stc")
