@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjj7olmp2mdxy"]
+
+[ext_resource type="Texture2D" uid="uid://nmimksml30h2" path="res://assets/officecat_sitting_right.png" id="1_f8bh5"]
+[ext_resource type="Texture2D" uid="uid://dskg7lffdasbw" path="res://assets/desk_back_01.png" id="2_jmyjy"]
+[ext_resource type="Texture2D" uid="uid://ghijmrb3652g" path="res://assets/monitor_back.png" id="3_vu245"]
+
+[node name="SittingCat" type="Node2D"]
+
+[node name="OfficecatSittingRight" type="Sprite2D" parent="."]
+position = Vector2(124, -89)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_f8bh5")
+flip_h = true
+
+[node name="DeskBack01" type="Sprite2D" parent="."]
+position = Vector2(99.3501, -40.5)
+scale = Vector2(0.137718, 0.1)
+texture = ExtResource("2_jmyjy")
+
+[node name="MonitorBack" type="Sprite2D" parent="."]
+position = Vector2(52, -107)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_vu245")

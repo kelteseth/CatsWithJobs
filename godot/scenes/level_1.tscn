@@ -1,18 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfkacg2hluwmi"]
+[gd_scene load_steps=22 format=3 uid="uid://bfkacg2hluwmi"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
 [ext_resource type="PackedScene" uid="uid://ci4ug66dtxqpv" path="res://scenes/level_components/wall.tscn" id="2_t0e4h"]
 [ext_resource type="PackedScene" uid="uid://78vtqqruy2hp" path="res://scenes/level_components/wall_with_cutout.tscn" id="3_q2ide"]
+[ext_resource type="Texture2D" uid="uid://bacy3tjgcly4p" path="res://assets/door_open.png" id="3_xi7pv"]
 [ext_resource type="PackedScene" uid="uid://be8fvckvl2om2" path="res://scenes/level_components/elevator_meowder.tscn" id="5_d5ovh"]
+[ext_resource type="Texture2D" uid="uid://dyopqwncqo134" path="res://assets/window.png" id="6_0g63c"]
+[ext_resource type="PackedScene" uid="uid://clabe2ydlmsus" path="res://scenes/background/sitting_cat.tscn" id="8_jqk0x"]
+[ext_resource type="PackedScene" uid="uid://cjj7olmp2mdxy" path="res://scenes/background/sitting_cat_01.tscn" id="9_7cosr"]
+[ext_resource type="Texture2D" uid="uid://17cynhi17gqk" path="res://assets/officecat_standing_left.png" id="9_shlnm"]
+[ext_resource type="PackedScene" uid="uid://cuwyf3brr2iqr" path="res://scenes/background/desk.tscn" id="10_axwuh"]
+[ext_resource type="PackedScene" uid="uid://du8e8sux8ps0w" path="res://scenes/level_components/whiteboard.tscn" id="11_4gcpy"]
+[ext_resource type="PackedScene" uid="uid://dir5xb1465dgg" path="res://scenes/level_components/chair_front_static.tscn" id="12_ldjmb"]
+[ext_resource type="PackedScene" uid="uid://c6sixdg6xex5h" path="res://scenes/level_components/desk_back.tscn" id="13_r8lk1"]
+[ext_resource type="PackedScene" uid="uid://ddm6nevqix3ui" path="res://scenes/level_components/desk_side.tscn" id="14_8a8v2"]
+[ext_resource type="PackedScene" uid="uid://bo8ymmae1prge" path="res://scenes/level_components/chair_left.tscn" id="15_caqxx"]
+[ext_resource type="PackedScene" uid="uid://fjnd4wckitna" path="res://scenes/level_components/monitor_front.tscn" id="16_a5jia"]
+[ext_resource type="PackedScene" uid="uid://b13754u68tx2b" path="res://scenes/level_components/desk_front.tscn" id="17_3o0va"]
+
+[sub_resource type="Animation" id="Animation_rtl3c"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_ewyvc"]
 resource_name = "elevator_movement"
 length = 4.0
 loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_rtl3c"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmyxs"]
 _data = {
@@ -22,6 +35,63 @@ _data = {
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_vkdvl")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(453, 300)
+scale = Vector2(1.0525, 1.0525)
+texture = ExtResource("6_0g63c")
+
+[node name="Window4" type="Sprite2D" parent="Window"]
+position = Vector2(2444.66, -2.85034)
+scale = Vector2(1.06283, 1.06283)
+texture = ExtResource("6_0g63c")
+
+[node name="Window3" type="Sprite2D" parent="Window"]
+position = Vector2(976.722, 0)
+scale = Vector2(1.03094, 1.03094)
+texture = ExtResource("6_0g63c")
+
+[node name="Window2" type="Sprite2D" parent="Window"]
+position = Vector2(570.071, 0)
+scale = Vector2(1.01535, 1.01535)
+texture = ExtResource("6_0g63c")
+
+[node name="Window" type="Sprite2D" parent="Window"]
+position = Vector2(282.185, 0.950122)
+scale = Vector2(1.00764, 1.00764)
+texture = ExtResource("6_0g63c")
+
+[node name="DoorOpen" type="Sprite2D" parent="."]
+position = Vector2(1816, 463)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_xi7pv")
+
+[node name="OfficecatStandingLeft" type="Sprite2D" parent="."]
+position = Vector2(1121, 498)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_shlnm")
+
+[node name="SittingCat" parent="." instance=ExtResource("8_jqk0x")]
+position = Vector2(361, 564)
+
+[node name="SittingCat2" parent="." instance=ExtResource("8_jqk0x")]
+position = Vector2(2136, 567)
+
+[node name="SittingCat3" parent="." instance=ExtResource("8_jqk0x")]
+position = Vector2(1415, 563)
+
+[node name="SittingCat4" parent="." instance=ExtResource("9_7cosr")]
+position = Vector2(647, 564)
+
+[node name="Desk" parent="." instance=ExtResource("10_axwuh")]
+position = Vector2(923, 561)
+scale = Vector2(1.1, 1.1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(453, 300)
+scale = Vector2(1.0525, 1.0525)
+color = Color(0.211765, 0.211765, 0.211765, 0.662745)
+polygon = PackedVector2Array(-167.221, -170.071, -169.121, 250.831, 2608.08, 251.781, 2608.08, -170.071, 2607.13, -671.734, -174.822, -664.133)
 
 [node name="etage_3" parent="." instance=ExtResource("1_y5vmu")]
 position = Vector2(2635, -403)
@@ -48,7 +118,7 @@ position = Vector2(2635, 120)
 metadata/_edit_group_ = true
 
 [node name="Ground7" parent="etage_2" instance=ExtResource("1_y5vmu")]
-position = Vector2(-602, 0)
+position = Vector2(-334, 0)
 metadata/_edit_group_ = true
 
 [node name="Ground5" parent="etage_2" instance=ExtResource("1_y5vmu")]
@@ -83,6 +153,9 @@ metadata/_edit_group_ = true
 position = Vector2(-2407, 0)
 metadata/_edit_group_ = true
 
+[node name="WallWithCutout5" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(1996, 564)
+
 [node name="Wall" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3199, 562)
 
@@ -105,7 +178,7 @@ position = Vector2(3200, 41)
 position = Vector2(3, 922)
 
 [node name="Ground3" parent="." instance=ExtResource("1_y5vmu")]
-position = Vector2(-376, 644)
+position = Vector2(-373, 643)
 
 [node name="WallWithCutout3" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(2970, 42)
@@ -117,3 +190,32 @@ libraries = {
 
 [node name="Elevator" parent="." instance=ExtResource("5_d5ovh")]
 position = Vector2(48, 576)
+
+[node name="WallWithCutout4" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(1247, 564)
+
+[node name="Whiteboard" parent="." instance=ExtResource("11_4gcpy")]
+position = Vector2(2345, 561)
+
+[node name="ChairLeft" parent="." instance=ExtResource("12_ldjmb")]
+position = Vector2(2650, 564)
+
+[node name="DeskBack" parent="." instance=ExtResource("13_r8lk1")]
+position = Vector2(2602, 565)
+
+[node name="DeskBack2" parent="." instance=ExtResource("14_8a8v2")]
+position = Vector2(864, 563)
+scale = Vector2(1.24, 1.2)
+
+[node name="ChairLeft2" parent="." instance=ExtResource("15_caqxx")]
+position = Vector2(915, 559)
+
+[node name="MonitorFront" parent="." instance=ExtResource("16_a5jia")]
+position = Vector2(847, 471)
+
+[node name="DeskBack3" parent="." instance=ExtResource("17_3o0va")]
+position = Vector2(422, 564)
+scale = Vector2(1.24, 1.12)
+
+[node name="MonitorFront2" parent="." instance=ExtResource("16_a5jia")]
+position = Vector2(433, 479)
