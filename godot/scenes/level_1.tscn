@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://78vtqqruy2hp" path="res://scenes/level_components/wall_with_cutout.tscn" id="3_q2ide"]
 [ext_resource type="Texture2D" uid="uid://bacy3tjgcly4p" path="res://assets/door_open.png" id="3_xi7pv"]
 [ext_resource type="PackedScene" uid="uid://be8fvckvl2om2" path="res://scenes/level_components/elevator_meowder.tscn" id="5_d5ovh"]
-[ext_resource type="Texture2D" uid="uid://dyopqwncqo134" path="res://assets/window.png" id="6_0g63c"]
+[ext_resource type="Texture2D" uid="uid://bexgl64g7w7cb" path="res://assets/window.png" id="6_0g63c"]
 [ext_resource type="PackedScene" uid="uid://clabe2ydlmsus" path="res://scenes/background/sitting_cat.tscn" id="8_jqk0x"]
 [ext_resource type="PackedScene" uid="uid://cjj7olmp2mdxy" path="res://scenes/background/sitting_cat_01.tscn" id="9_7cosr"]
 [ext_resource type="Texture2D" uid="uid://17cynhi17gqk" path="res://assets/officecat_standing_left.png" id="9_shlnm"]

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d2n03jbt8vebu" path="res://scenes/level_components/monitor_back.tscn" id="9_j68s5"]
 [ext_resource type="PackedScene" uid="uid://ddm6nevqix3ui" path="res://scenes/level_components/desk_side.tscn" id="10_6svdb"]
 [ext_resource type="PackedScene" uid="uid://c6sojpw37vf0l" path="res://scenes/level_components/chair_front.tscn" id="11_syqyi"]
-[ext_resource type="PackedScene" uid="uid://wkvyfprv7y1e" path="res://scenes/level_components/ladder.tscn" id="12_f0cio"]
+[ext_resource type="PackedScene" uid="uid://b5lldkjv6rdnc" path="res://scenes/level_components/ladder.tscn" id="12_f0cio"]
 [ext_resource type="PackedScene" uid="uid://bo8ymmae1prge" path="res://scenes/level_components/chair_left.tscn" id="13_bmdl8"]
 
 [node name="Level01" type="Node2D"]
