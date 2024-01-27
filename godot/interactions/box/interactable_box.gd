@@ -3,8 +3,8 @@ extends RigidBody2D
 @export var vfx_prefab: PackedScene
 @export var flame_field_prefab: PackedScene
 
-var current_health = 1
-var max_health = 1
+var current_health = 100
+var max_health = 100
 
 var spawned_flame_field: Node
 var spawned_flame_vfx: Node
@@ -53,12 +53,17 @@ func react_to_electriity():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	apply_impulse(Vector2(100, 0))
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if self.burn_sources > 0:
+		self.current_health -= 20 * delta
+	
+	if self.current_health < 0:
+		self.queue_free()
+	
+	self.modulate = Color.WHITE * self.current_health * 0.01
 
 func _integrate_forces(state):
 	apply_central_force(current_gravity_force)
