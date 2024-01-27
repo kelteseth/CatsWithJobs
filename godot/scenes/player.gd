@@ -75,11 +75,13 @@ func move_cusor(delta: float, movement_direction: MovementDirection):
 	if movement_direction == MovementDirection.RIGHT:
 		gun_pos_left.visible = true
 		gun_pos_right.visible = false
-		gun_pos_left.look_at(target_cursor.global_position)
+
 	if movement_direction == MovementDirection.LEFT:
 		gun_pos_left.visible = false
 		gun_pos_right.visible = true
-		gun_pos_right.look_at(target_cursor.global_position)
+		
+	gun_pos_right.look_at(target_cursor.global_position)
+	gun_pos_left.look_at(target_cursor.global_position)
 	
 	
 func _physics_process(delta):
@@ -111,7 +113,8 @@ func _physics_process(delta):
 		movement_direction = MovementDirection.RIGHT
 		
 	calc_distance_traveled()
-	move_cusor(delta,movement_direction)
+	if input_active:
+		move_cusor(delta,movement_direction)
 
 	if direction != 0:
 		velocity.x = direction * SPEED
