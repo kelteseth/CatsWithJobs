@@ -47,9 +47,9 @@ func _unhandled_input(event):
 			_pause_menu()
 
 func _input(event):
-		if event.is_action_pressed("ui_up") \
-		|| event.is_action_pressed("ui_right") \
-		|| event.is_action_pressed("ui_left") \
-		|| event.is_action_pressed("ui_down") \
-		|| event.is_action_pressed("ui_accept"):
-			$AudioStreamPlayerBeep.play()
+	if event.is_action_pressed("ui_up") \
+	|| event.is_action_pressed("ui_right") \
+	|| event.is_action_pressed("ui_left") \
+	|| event.is_action_pressed("ui_down") \
+	|| event.is_action_pressed("ui_accept"):
+		$AudioStreamPlayerBeep.play()
