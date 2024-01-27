@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13754u68tx2b"]
+
+[ext_resource type="Texture2D" uid="uid://dw8pmi6vo1thy" path="res://assets/desk_back.png" id="1_c6hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34m7v"]
+size = Vector2(1344.63, 755.295)
+
+[node name="DeskBack" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(71, -40)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_c6hud")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-41.6531, 20.3218)
+shape = SubResource("RectangleShape2D_34m7v")
