@@ -21,6 +21,7 @@ func grab_button_focus() -> void:
 func _resume() -> void:
 	get_tree().paused = false
 	visible = false
+	get_node("/root/IngameScene/AudioStreamPlayerBackgroundnMusic").pitch_scale = 1.0
 	
 	
 func _settings() -> void:

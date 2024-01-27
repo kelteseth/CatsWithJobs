@@ -38,3 +38,4 @@ func _input(event) -> void:
 		get_tree().paused = true
 		pause_overlay.grab_button_focus()
 		pause_overlay.visible = true
+		$AudioStreamPlayerBackgroundnMusic.pitch_scale = 0.75
