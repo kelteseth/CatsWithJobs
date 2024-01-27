@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bukurk3lyylis"]
+[gd_scene load_steps=9 format=3 uid="uid://bukurk3lyylis"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_prwdu"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="4_0fehj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtvxgek4tdf" path="res://interactions/gravity_fields/gravity_field.tscn" id="5_ccgh1"]
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="6_pcw00"]
 [ext_resource type="PackedScene" uid="uid://dujvk0fq3cq0x" path="res://interactions/fire_fields/flame_field.tscn" id="6_vc8o3"]
+[ext_resource type="PackedScene" uid="uid://cfwaeh5078325" path="res://interactions/explosion_fields/explosion_field.tscn" id="7_d5mdf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvolf"]
 size = Vector2(338, 201)
@@ -38,3 +39,6 @@ shape = SubResource("RectangleShape2D_lvolf")
 
 [node name="FlameField" parent="." instance=ExtResource("6_vc8o3")]
 position = Vector2(471, 198)
+
+[node name="ExplosionField" parent="." instance=ExtResource("7_d5mdf")]
+position = Vector2(620, 405)

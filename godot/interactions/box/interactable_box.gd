@@ -54,3 +54,8 @@ func _process(delta):
 
 func _integrate_forces(state):
 	apply_central_force(current_gravity_force)
+
+
+func _on_body_entered(body):
+	print("TOOD tell hit body to take damage")
+
