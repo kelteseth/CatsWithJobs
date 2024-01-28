@@ -21,8 +21,8 @@ func _ready() -> void:
 	player_1.set_player_active(false)
 
 func load_end_credits(player_id):
+	$UI/GameEndOverlay.visible = true
 	
-	pass
 func on_player_turn_done(player_id):
 	print("Player turn done of player: ", player_id)
 	set_ui_player_percentage_moved(player_id,0)

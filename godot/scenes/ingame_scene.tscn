@@ -34,6 +34,9 @@ script = ExtResource("2_m6rsn")
 unique_name_in_owner = true
 visible = false
 
+[node name="GameEndOverlay" parent="UI" instance=ExtResource("10_gjdbd")]
+visible = false
+
 [node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
 unique_name_in_owner = true
 process_mode = 2
