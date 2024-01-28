@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
-@export var max_player_units_moved: float = 1000
+@export var max_player_units_moved: float = 200
 @export var phantom_camera: PhantomCamera2D
 @export var player_id = 0
 @export var plazer_image_left: CompressedTexture2D
@@ -162,6 +162,7 @@ func shoot():
 	
 	$AudioStreamPlayerShoot.play(0.05)
 	bullet_count -= 1
+	total_distance_moved += 2000
 	print(bullet_count)
 	if bullet_count <= 0:
 		set_gun_enabled(false)
