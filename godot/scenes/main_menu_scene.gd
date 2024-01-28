@@ -8,6 +8,7 @@ extends Node2D
 @onready var new_game_button := %NewGameButton
 @onready var settings_button := %SettingsButton
 @onready var exit_button := %ExitButton
+@onready var animation_player := $AnimationPlayer2
 
 var next_scene = game_scene
 var new_game = true
@@ -29,6 +30,12 @@ func _ready() -> void:
 		continue_button.grab_focus()
 	else:
 		new_game_button.grab_focus()
+		
+	var current_animation_name = "menue_animation"
+	animation_player.play(current_animation_name)
+	var animation = animation_player.get_animation(current_animation_name)
+	animation.loop_mode = Animation.LOOP_LINEAR
+	
 
 func _on_settings_button_pressed() -> void:
 	new_game = false
