@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=15 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="11_1oebf"]
 [ext_resource type="PackedScene" uid="uid://6pc5hmaoxtga" path="res://scenes/game_end.tscn" id="12_1fwi7"]
 [ext_resource type="PackedScene" uid="uid://cy5wj6ynbbs35" path="res://scenes/level_components/lamp.tscn" id="13_l2ecj"]
+[ext_resource type="PackedScene" uid="uid://lj1yh2n2pnay" path="res://scenes/pickup.tscn" id="14_2nqaj"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
@@ -145,10 +146,16 @@ rotation = -7.85397
 scale = Vector2(0.338694, 0.658696)
 
 [node name="Box18" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(187, 252)
+position = Vector2(187, 318)
 
 [node name="Box19" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(162, 148)
+position = Vector2(189, 226)
 
 [node name="Box20" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(-162, 124)
+position = Vector2(104, 298)
+
+[node name="Box21" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(-66, 191)
+
+[node name="Pickup2" parent="." instance=ExtResource("14_2nqaj")]
+position = Vector2(-399, 124)
