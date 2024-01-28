@@ -1,15 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://v0o8d5npugxp"]
+[gd_scene load_steps=4 format=3 uid="uid://v0o8d5npugxp"]
 
+[ext_resource type="Script" path="res://scenes/level_components/elevator.gd" id="1_0jy1s"]
 [ext_resource type="Texture2D" uid="uid://4n0kjfs1w4fk" path="res://assets/elevator.png" id="1_54u51"]
 
-[node name="Elevator" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eadbp"]
+size = Vector2(149, 162)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(90, -112)
-scale = Vector2(0.07, 0.07)
-polygon = PackedVector2Array(1350, 1580, -1285.71, 1585.71, -1285.71, -1557.14, 1357.14, -1542.86, 1357.14, -1357.14, -1057.14, -1357.14, -1028.57, 1414.29, 1357.14, 1400)
+[node name="Elevator" type="StaticBody2D" groups=["elevators"]]
+script = ExtResource("1_0jy1s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(90, -112)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_54u51")
+
+[node name="Area2D" type="Area2D" parent="." groups=["elevators"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["elevators"]]
+position = Vector2(93.5, -110)
+shape = SubResource("RectangleShape2D_eadbp")
+
+[node name="CollisionPolygon2DLeft" type="CollisionPolygon2D" parent="."]
+position = Vector2(90, -112)
+scale = Vector2(0.07, 0.07)
+polygon = PackedVector2Array(1350, 1580, -1285.71, 1585.71, -1300, 1385.71, 1357.14, 1400)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
