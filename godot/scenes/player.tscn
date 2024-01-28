@@ -114,4 +114,6 @@ shape = SubResource("CircleShape2D_qxk03")
 
 [connection signal="body_entered" from="TargetCursor/Area2D" to="TargetCursor" method="_on_area_2d_body_entered"]
 [connection signal="finished" from="AudioStreamPlayerTalking" to="AudioStreamPlayerTalking" method="_on_finished"]
+[connection signal="area_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_area_entered"]
+[connection signal="area_exited" from="PickupArea2D" to="." method="_on_pickup_area_2d_area_exited"]
 [connection signal="body_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_body_entered"]
