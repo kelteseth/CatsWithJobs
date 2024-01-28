@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bfkacg2hluwmi"]
+[gd_scene load_steps=37 format=3 uid="uid://bfkacg2hluwmi"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
@@ -18,7 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://dj1jmutdphg1t" path="res://assets/carton_closed.png" id="9_pcwdp"]
 [ext_resource type="Texture2D" uid="uid://17cynhi17gqk" path="res://assets/officecat_standing_left.png" id="9_shlnm"]
 [ext_resource type="PackedScene" uid="uid://cuwyf3brr2iqr" path="res://scenes/background/desk.tscn" id="10_axwuh"]
+[ext_resource type="Texture2D" uid="uid://dskg7lffdasbw" path="res://assets/desk_back_01.png" id="16_1draw"]
+[ext_resource type="Texture2D" uid="uid://vjmvcwl6vntc" path="res://assets/coffee_left.png" id="17_3peci"]
 [ext_resource type="PackedScene" uid="uid://sgve5qtjgtl6" path="res://scenes/level_components/ground_with_hole.tscn" id="17_25i7f"]
+[ext_resource type="Texture2D" uid="uid://ghijmrb3652g" path="res://assets/monitor_back.png" id="18_ujnsy"]
 [ext_resource type="Texture2D" uid="uid://crs7jghkdxlw7" path="res://assets/ventilation.png" id="20_48tgh"]
 [ext_resource type="PackedScene" uid="uid://b1pt2vujaiwwq" path="res://scenes/level_components/wall_with_ventilation.tscn" id="21_v1kvn"]
 [ext_resource type="PackedScene" uid="uid://v0o8d5npugxp" path="res://scenes/level_components/elevator.tscn" id="22_xiako"]
@@ -28,7 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://bq6mqeunc84kc" path="res://scenes/level_components/ventilation_02.tscn" id="25_s5wyi"]
 [ext_resource type="PackedScene" uid="uid://dneb3140gedat" path="res://scenes/level_components/ventilation_04.tscn" id="26_skh4u"]
 [ext_resource type="PackedScene" uid="uid://7m7kl3uhmtcu" path="res://scenes/level_components/ventilation_05.tscn" id="29_w4fr5"]
+[ext_resource type="Texture2D" uid="uid://cld3s81m48uhs" path="res://assets/bosscat.png" id="33_7djuf"]
 [ext_resource type="PackedScene" uid="uid://jdktr40l24a6" path="res://scenes/level_components/elevator_right.tscn" id="34_55lnv"]
+[ext_resource type="Texture2D" uid="uid://c2k8kmqqs4l0q" path="res://assets/company_sign.png" id="34_d31ve"]
 
 [sub_resource type="Animation" id="Animation_rtl3c"]
 length = 4.0
@@ -427,13 +432,27 @@ rotation = 3.13594
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("20_48tgh")
 
+[node name="DeskBack01" type="Sprite2D" parent="."]
+position = Vector2(2329, -1608)
+scale = Vector2(0.278287, 0.204751)
+texture = ExtResource("16_1draw")
+
+[node name="CoffeeLeft" type="Sprite2D" parent="."]
+position = Vector2(2390, -1721)
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("17_3peci")
+
+[node name="MonitorBack" type="Sprite2D" parent="."]
+position = Vector2(2255, -1747)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("18_ujnsy")
+
 [node name="OfficecatStandingLeft2" type="Sprite2D" parent="."]
 position = Vector2(2593.88, -554.75)
 scale = Vector2(0.335962, 0.335962)
 texture = ExtResource("9_shlnm")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
 position = Vector2(451, 300)
 scale = Vector2(1.0525, 1.0525)
 color = Color(0.211765, 0.211765, 0.211765, 0.662745)
@@ -671,3 +690,13 @@ scale = Vector2(0.55999, 1)
 position = Vector2(3385, -1048)
 rotation = 1.5708
 scale = Vector2(0.44, 1.06)
+
+[node name="Bosscat" type="Sprite2D" parent="."]
+position = Vector2(2682, -1646)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("33_7djuf")
+
+[node name="CompanySign" type="Sprite2D" parent="."]
+position = Vector2(2568, -2043)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("34_d31ve")
