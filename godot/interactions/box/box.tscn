@@ -22,7 +22,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_u1hnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.52, 0.52)
 shape = SubResource("RectangleShape2D_pxlya")
 
 [node name="AudioStreamPlayerBurning" type="AudioStreamPlayer2D" parent="."]
