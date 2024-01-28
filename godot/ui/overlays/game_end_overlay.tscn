@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5l3fgk3hosoh"]
+[gd_scene load_steps=5 format=3 uid="uid://c5l3fgk3hosoh"]
 
 [ext_resource type="Script" path="res://ui/overlays/game_end_overlay.gd" id="1_c3qn2"]
 [ext_resource type="Texture2D" uid="uid://btrfuep8cpbgb" path="res://assets/background_ending.png" id="2_7p4ln"]
+[ext_resource type="AudioStream" uid="uid://q53qwih6b4rl" path="res://assets/Sounds/Music/winner_winner_chicken_dinner.ogg" id="3_l5540"]
 
 [sub_resource type="Theme" id="Theme_iwnvy"]
 
@@ -14,20 +15,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c3qn2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.145098, 0.34902, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 509.0
-offset_top = 221.0
-offset_right = 549.0
-offset_bottom = 261.0
-text = "END"
+offset_left = -24.0
+offset_top = -36.0
+offset_right = 1896.0
+offset_bottom = 1044.0
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("2_7p4ln")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 93.0
+offset_right = 128.0
+offset_bottom = 245.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "THE END"
 
 [node name="PlayerName" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 794.0
-offset_top = 274.0
-offset_right = 1093.0
-offset_bottom = 336.0
+offset_left = 418.0
+offset_top = 155.0
+offset_right = 717.0
+offset_bottom = 217.0
 theme = SubResource("Theme_iwnvy")
 theme_override_font_sizes/normal_font_size = 36
 text = "PLAYERNAME
@@ -40,21 +64,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -198.0
-offset_right = 96.0
-offset_bottom = -169.0
+offset_left = -120.5
+offset_top = -390.0
+offset_right = 72.5
+offset_bottom = -361.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Back To Main Miaunue"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -24.0
-offset_top = -36.0
-offset_right = 1896.0
-offset_bottom = 1044.0
-scale = Vector2(0.635, 0.635)
-texture = ExtResource("2_7p4ln")
+[node name="AudioStreamPlayerWinne" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_l5540")
+volume_db = 24.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

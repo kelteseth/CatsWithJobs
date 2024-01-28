@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c5vyoo400vr0u" path="res://ui/overlays/ingame_overlay.tscn" id="5_yrup4"]
 [ext_resource type="PackedScene" uid="uid://b3kdd27qyixd8" path="res://scenes/player.tscn" id="6_megu6"]
 [ext_resource type="PackedScene" uid="uid://bfkacg2hluwmi" path="res://scenes/level_1.tscn" id="7_dr253"]
-[ext_resource type="AudioStream" uid="uid://cxaswq71s52so" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
-[ext_resource type="AudioStream" uid="uid://by4e6wbhrohwy" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
+[ext_resource type="AudioStream" uid="uid://b67mnal8buonv" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
+[ext_resource type="AudioStream" uid="uid://csvly5xbh4f2l" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
 [ext_resource type="PackedScene" uid="uid://c5l3fgk3hosoh" path="res://ui/overlays/game_end_overlay.tscn" id="10_gjdbd"]
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="11_1oebf"]
 [ext_resource type="PackedScene" uid="uid://6pc5hmaoxtga" path="res://scenes/game_end.tscn" id="12_1fwi7"]
@@ -24,7 +24,7 @@ player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-position = Vector2(671, 428)
+position = Vector2(662, 428)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
@@ -48,7 +48,7 @@ process_mode = 2
 visible = false
 
 [node name="Player_0" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(671, 428)
+position = Vector2(662, 428)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
 position = Vector2(533, 429)
