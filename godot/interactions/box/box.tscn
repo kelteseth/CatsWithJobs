@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cyru3nej8klkw" path="res://interactions/flame/flames.tscn" id="2_vdjpo"]
 [ext_resource type="PackedScene" uid="uid://dujvk0fq3cq0x" path="res://interactions/fire_fields/flame_field.tscn" id="3_ioir2"]
 [ext_resource type="Texture2D" uid="uid://dbqvrowlgpnnw" path="res://assets/carton_closed.png" id="4_u1hnq"]
-[ext_resource type="AudioStream" uid="uid://bcvuxlnx3fptg" path="res://assets/Sounds/Items/burning_mehr_knister.ogg" id="5_i1oyo"]
-[ext_resource type="AudioStream" uid="uid://bkwow5q8u7y1h" path="res://assets/Sounds/Items/fallender_karton.ogg" id="6_vng6o"]
+[ext_resource type="AudioStream" uid="uid://bd7lebsmhx84l" path="res://assets/Sounds/Items/burning_mehr_knister.ogg" id="5_i1oyo"]
+[ext_resource type="AudioStream" uid="uid://bbnq3q5enep8x" path="res://assets/Sounds/Items/fallender_karton.ogg" id="6_vng6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxlya"]
 size = Vector2(128, 128)

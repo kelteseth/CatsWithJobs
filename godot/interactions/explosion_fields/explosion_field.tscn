@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cfwaeh5078325"]
 
 [ext_resource type="Script" path="res://interactions/explosion_fields/explosion_field.gd" id="1_wxaub"]
-[ext_resource type="AudioStream" uid="uid://becfucsdml8pb" path="res://assets/Sounds/Items/bomb_explosion.ogg" id="2_jayk3"]
+[ext_resource type="AudioStream" uid="uid://2jw3vi31w2d7" path="res://assets/Sounds/Items/bomb_explosion.ogg" id="2_jayk3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ujt5a"]
 radius = 100.0

@@ -5,13 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
-[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="5_ubesq"]
+[ext_resource type="Theme" uid="uid://u4cobiqeavn5" path="res://ui/theme.tres" id="5_ubesq"]
 [ext_resource type="PackedScene" uid="uid://bfkacg2hluwmi" path="res://scenes/level_1.tscn" id="6_cg6gw"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
 font_size = 8
 font_color = Color(1, 1, 1, 0.486275)
+
+[sub_resource type="Animation" id="Animation_6ko7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2072, 2125)]
+}
 
 [sub_resource type="Animation" id="Animation_qpfmq"]
 resource_name = "menue_animation"
@@ -28,21 +43,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-2072, 2125), Vector2(-2072, 2125), Vector2(-236, 10), Vector2(-236, 10)]
-}
-
-[sub_resource type="Animation" id="Animation_6ko7x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2072, 2125)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vunx8"]

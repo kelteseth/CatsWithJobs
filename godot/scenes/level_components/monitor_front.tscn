@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level_components/component_interaction.gd" id="1_jc864"]
 [ext_resource type="Texture2D" uid="uid://dqsc7a8cqwc08" path="res://assets/monitor.png" id="1_kke0y"]
-[ext_resource type="AudioStream" uid="uid://dvp01qfukbrsl" path="res://assets/Sounds/Items/monitor_crash.ogg" id="3_c1gxd"]
+[ext_resource type="AudioStream" uid="uid://cdvo7li5xx6yg" path="res://assets/Sounds/Items/monitor_crash.ogg" id="3_c1gxd"]
 
 [node name="MonitorFront" type="RigidBody2D"]
 collision_layer = 4

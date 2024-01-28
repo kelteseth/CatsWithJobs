@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
 [ext_resource type="Shader" path="res://ui/overlays/pause_overlay.gdshader" id="2_mpghw"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
-[ext_resource type="AudioStream" uid="uid://oq1m3tq5m5cs" path="res://assets/Sounds/Music/menu_selection.ogg" id="4_widyx"]
+[ext_resource type="AudioStream" uid="uid://dd2qokwlgqh1k" path="res://assets/Sounds/Music/menu_selection.ogg" id="4_widyx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2t4s"]
 shader = ExtResource("2_mpghw")
