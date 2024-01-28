@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b71e8238jxku3"]
+
+[ext_resource type="Texture2D" uid="uid://b27ywqy8lmcco" path="res://assets/ventilation_01.png" id="1_2ks2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frh7y"]
+size = Vector2(266, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft7nf"]
+size = Vector2(264.167, 17)
+
+[node name="Ventilation01" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(159.4, -194)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("RectangleShape2D_frh7y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(159.5, -11.8)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("RectangleShape2D_ft7nf")
+
+[node name="Ventilation01" type="Sprite2D" parent="."]
+position = Vector2(169, -171)
+scale = Vector2(0.112044, 0.112353)
+texture = ExtResource("1_2ks2g")
