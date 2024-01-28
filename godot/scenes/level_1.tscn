@@ -665,11 +665,11 @@ position = Vector2(-667, -27)
 scale = Vector2(-0.75, 0.75)
 
 [node name="Ventilation03" parent="house" instance=ExtResource("25_s5wyi")]
-position = Vector2(-309, 261)
+position = Vector2(-309, 263)
 scale = Vector2(-1, 1)
 
 [node name="Ventilation02" parent="house" instance=ExtResource("26_skh4u")]
-position = Vector2(-411, 82)
+position = Vector2(-412, 82)
 scale = Vector2(-0.87, 0.87)
 
 [node name="WallWithCutout13" parent="house" instance=ExtResource("21_v1kvn")]
