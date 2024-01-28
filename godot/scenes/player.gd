@@ -18,6 +18,9 @@ var last_position = Vector2()
 var total_distance_moved: float = 0.0
 var cursor_speed = 200
 
+# Needed for elevator
+var free_movement = false
+
 var has_gun = false
 var bullet_count = 5
 
@@ -26,6 +29,7 @@ enum MovementDirection {INVALID, LEFT, RIGHT}
 
 signal turn_done(player_id)
 signal player_moved(player_id, units_moved)
+signal game_end(player_id)
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -122,7 +126,8 @@ func _physics_process(delta):
 	if input_active and has_gun and Input.is_action_just_pressed("shoot_p" + str(player_id)):
 		shoot()
 
-	calc_distance_traveled()
+	if not free_movement:
+		calc_distance_traveled()
 	
 	if input_active:
 		move_cusor(delta)
@@ -181,9 +186,22 @@ func set_gun_enabled(enabled: bool):
 		gun_pos_left.visible = false
 		gun_pos_right.visible = false
 		
-func _on_pickup_area_2d_body_entered(body):
-	if body.has_method("get_pickup"):
-		body.queue_free()
+
+func set_free_movement(free_movement: bool):
+	print("free movementr:", free_movement)
+	self.free_movement = free_movement
+
+
+func _on_pickup_area_2d_area_entered(area):
+	if area.is_in_group("elevators"):
+		set_free_movement(true)
+	if area.has_method("get_pickup"):
+		area.queue_free()
 		has_gun = true
-		
-	
+	if area.is_in_group("game_end"):
+		game_end.emit(player_id)
+
+
+func _on_pickup_area_2d_area_exited(area):
+	if area.is_in_group("elevators"):
+		set_free_movement(false)

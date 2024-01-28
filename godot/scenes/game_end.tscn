@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://6pc5hmaoxtga"]
+
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_n525d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he0ab"]
+size = Vector2(113, 81)
+
+[node name="Pickup" type="Area2D" groups=["game_end"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(56, 41)
+scale = Vector2(0.303571, 0.303571)
+texture = ExtResource("1_n525d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(60, 40)
+shape = SubResource("RectangleShape2D_he0ab")
