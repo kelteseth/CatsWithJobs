@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bfkacg2hluwmi"]
+[gd_scene load_steps=39 format=3 uid="uid://bfkacg2hluwmi"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
@@ -22,7 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://vjmvcwl6vntc" path="res://assets/coffee_left.png" id="17_3peci"]
 [ext_resource type="PackedScene" uid="uid://dajwhpescqm54" path="res://scenes/level_components/ground_with_hole.tscn" id="17_25i7f"]
 [ext_resource type="Texture2D" uid="uid://ghijmrb3652g" path="res://assets/monitor_back.png" id="18_ujnsy"]
+[ext_resource type="Texture2D" uid="uid://b5i7cl7f137i3" path="res://assets/milk.png" id="19_4yd1r"]
 [ext_resource type="Texture2D" uid="uid://crs7jghkdxlw7" path="res://assets/ventilation.png" id="20_48tgh"]
+[ext_resource type="Texture2D" uid="uid://p8m3fwxcc027" path="res://assets/pylon.png" id="20_f7oyo"]
 [ext_resource type="PackedScene" uid="uid://b1pt2vujaiwwq" path="res://scenes/level_components/wall_with_ventilation.tscn" id="21_v1kvn"]
 [ext_resource type="PackedScene" uid="uid://v0o8d5npugxp" path="res://scenes/level_components/elevator.tscn" id="22_xiako"]
 [ext_resource type="PackedScene" uid="uid://b71e8238jxku3" path="res://scenes/level_components/ventilation_01.tscn" id="23_0u745"]
@@ -441,6 +443,16 @@ position = Vector2(748, -480)
 position = Vector2(419, -481)
 scale = Vector2(0.605, 0.605)
 
+[node name="PlantBig9" type="Sprite2D" parent="."]
+position = Vector2(2071, -1644)
+scale = Vector2(0.580374, 0.580374)
+texture = ExtResource("7_icmot")
+
+[node name="PlantBig10" type="Sprite2D" parent="."]
+position = Vector2(3086, -1644)
+scale = Vector2(0.580374, 0.580374)
+texture = ExtResource("7_icmot")
+
 [node name="Ventilation3" type="Sprite2D" parent="."]
 position = Vector2(2887, -849)
 rotation = 3.13594
@@ -461,6 +473,21 @@ texture = ExtResource("17_3peci")
 position = Vector2(2255, -1747)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("18_ujnsy")
+
+[node name="Milk" type="Sprite2D" parent="."]
+position = Vector2(2457.25, -1714.09)
+scale = Vector2(0.677215, 0.677215)
+texture = ExtResource("19_4yd1r")
+
+[node name="Pylon" type="Sprite2D" parent="."]
+position = Vector2(1647.1, -1050)
+scale = Vector2(0.473026, 0.519512)
+texture = ExtResource("20_f7oyo")
+
+[node name="Pylon2" type="Sprite2D" parent="."]
+position = Vector2(988, -1570)
+scale = Vector2(0.473026, 0.519512)
+texture = ExtResource("20_f7oyo")
 
 [node name="OfficecatStandingLeft2" type="Sprite2D" parent="."]
 position = Vector2(2593.88, -554.75)
