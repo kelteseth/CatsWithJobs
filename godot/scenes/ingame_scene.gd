@@ -21,7 +21,11 @@ func _ready() -> void:
 	player_1.set_player_active(false)
 
 func load_end_credits(player_id):
+	$UI/GameEndOverlay.set_winner(player_id)
 	$UI/GameEndOverlay.visible = true
+	$UI/IngameOverlay.visible = false
+	player_0.set_player_active(false)
+	player_1.set_player_active(false)
 	
 func on_player_turn_done(player_id):
 	print("Player turn done of player: ", player_id)

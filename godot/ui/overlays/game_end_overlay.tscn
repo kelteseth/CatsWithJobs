@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://c5l3fgk3hosoh"]
+[gd_scene load_steps=4 format=3 uid="uid://c5l3fgk3hosoh"]
+
+[ext_resource type="Script" path="res://ui/overlays/game_end_overlay.gd" id="1_c3qn2"]
+[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="2_benck"]
+
+[sub_resource type="Theme" id="Theme_iwnvy"]
 
 [node name="GameEndOverlay" type="Control"]
 layout_mode = 3
@@ -7,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c3qn2")
+menu_scene = ExtResource("2_benck")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -15,3 +22,31 @@ offset_top = 221.0
 offset_right = 549.0
 offset_bottom = 261.0
 text = "END"
+
+[node name="PlayerName" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 274.0
+offset_right = 1093.0
+offset_bottom = 336.0
+theme = SubResource("Theme_iwnvy")
+theme_override_font_sizes/normal_font_size = 36
+text = "PLAYERNAME
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -198.0
+offset_right = 96.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back To Main Miaunue"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
