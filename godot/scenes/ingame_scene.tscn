@@ -129,4 +129,4 @@ position = Vector2(2173, -31)
 position = Vector2(2308, -31)
 
 [node name="Pickup" parent="." instance=ExtResource("11_jsht0")]
-position = Vector2(2161, -314)
+position = Vector2(857, 427)
