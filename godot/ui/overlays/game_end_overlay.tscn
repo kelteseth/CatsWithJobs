@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5l3fgk3hosoh"]
+[gd_scene load_steps=3 format=3 uid="uid://c5l3fgk3hosoh"]
 
 [ext_resource type="Script" path="res://ui/overlays/game_end_overlay.gd" id="1_c3qn2"]
-[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="2_benck"]
 
 [sub_resource type="Theme" id="Theme_iwnvy"]
 
@@ -13,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c3qn2")
-menu_scene = ExtResource("2_benck")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
