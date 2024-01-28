@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=25 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
@@ -14,16 +14,24 @@
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
 [ext_resource type="AudioStream" uid="uid://bccnnuxegty61" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
 [ext_resource type="AudioStream" uid="uid://cstwvjwi08wau" path="res://assets/Sounds/Cat/jump.ogg" id="13_4qxdn"]
+[ext_resource type="Script" path="res://scenes/target_cursor.gd" id="13_qmhmc"]
 [ext_resource type="AudioStream" uid="uid://0qb32tywht43" path="res://assets/Sounds/Items/gun05_single_shot.ogg" id="14_vtar0"]
 [ext_resource type="AudioStream" uid="uid://3jtlyyfgp7ca" path="res://assets/Sounds/Music/cats_spawn.ogg" id="15_bfcj2"]
+[ext_resource type="Script" path="res://scenes/play_random_audio.gd" id="17_s5kur"]
+[ext_resource type="AudioStream" uid="uid://gjq4yb4ofw17" path="res://assets/Sounds/Cat/cat_purr.ogg" id="18_tyl32"]
+[ext_resource type="AudioStream" uid="uid://bl3yefcjbukp0" path="res://assets/Sounds/Cat/cute_talkative_cat.ogg" id="19_ik34d"]
+[ext_resource type="AudioStream" uid="uid://clr8h3ssqqhi6" path="res://assets/Sounds/Cat/cat.ogg" id="20_2arw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(30, 114)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3juov"]
+radius = 128.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxk03"]
 radius = 55.0364
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 script = ExtResource("1_2ppkv")
 phantom_camera = NodePath("PhantomCamera2D")
 plazer_image_left = ExtResource("3_3ok0d")
@@ -71,6 +79,12 @@ flip_v = true
 [node name="TargetCursor" type="Sprite2D" parent="."]
 scale = Vector2(0.118333, 0.118333)
 texture = ExtResource("11_y6stc")
+script = ExtResource("13_qmhmc")
+
+[node name="Area2D" type="Area2D" parent="TargetCursor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetCursor/Area2D"]
+shape = SubResource("CircleShape2D_3juov")
 
 [node name="AudioStreamPlayerSteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_y65u5")
@@ -87,12 +101,17 @@ volume_db = 15.0
 stream = ExtResource("15_bfcj2")
 volume_db = 12.0
 
+[node name="AudioStreamPlayerTalking" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
+script = ExtResource("17_s5kur")
+sounds = Array[AudioStream]([ExtResource("20_2arw5"), ExtResource("18_tyl32"), ExtResource("19_ik34d")])
+
 [node name="PickupArea2D" type="Area2D" parent="."]
-collision_layer = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
-position = Vector2(52, 75)
+position = Vector2(52, 63)
 shape = SubResource("CircleShape2D_qxk03")
 
-[connection signal="area_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_area_entered"]
-[connection signal="area_exited" from="PickupArea2D" to="." method="_on_pickup_area_2d_area_exited"]
+[connection signal="body_entered" from="TargetCursor/Area2D" to="TargetCursor" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayerTalking" to="AudioStreamPlayerTalking" method="_on_finished"]
+[connection signal="body_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_body_entered"]

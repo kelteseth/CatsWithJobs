@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://codmrqkb4i451"
-path="res://.godot/imported/pylon.png-a956383cac6964e6130fd0a293cd6372.ctex"
+uid="uid://gmcwu6xu5k7q"
+path="res://.godot/imported/ventilation_end.png-ed7f900ddbfa35eb7baf80e3c75f2d6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pylon.png"
-dest_files=["res://.godot/imported/pylon.png-a956383cac6964e6130fd0a293cd6372.ctex"]
+source_file="res://assets/ventilation_end.png"
+dest_files=["res://.godot/imported/ventilation_end.png-ed7f900ddbfa35eb7baf80e3c75f2d6e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://codmrqkb4i451"
-path="res://.godot/imported/pylon.png-a956383cac6964e6130fd0a293cd6372.ctex"
+uid="uid://bcu5sc6k5kdqy"
+path="res://.godot/imported/ground_with_hole.png-0464081ffe88c936cdf6f275f226dfe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pylon.png"
-dest_files=["res://.godot/imported/pylon.png-a956383cac6964e6130fd0a293cd6372.ctex"]
+source_file="res://assets/ground_with_hole.png"
+dest_files=["res://.godot/imported/ground_with_hole.png-0464081ffe88c936cdf6f275f226dfe8.ctex"]
 
 [params]
 

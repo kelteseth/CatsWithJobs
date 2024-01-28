@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5eq7e3ej0xts"]
+
+[ext_resource type="Texture2D" uid="uid://c8acdtlk1yk00" path="res://assets/ventilation_02.png" id="1_vbhqt"]
+
+[node name="Ventilation01" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.110657, -0.438309)
+scale = Vector2(0.778689, 0.768633)
+polygon = PackedVector2Array(275, -161, 355, -161, 355, -337, 377, -337, 377, -139, 297, -139, 297, 1, 274.777, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.110657, -0.438309)
+scale = Vector2(0.778689, 0.768633)
+polygon = PackedVector2Array(0, -0.241487, 21.5334, -0.241487, 22.4083, -202, 136, -202, 136, -337, 112, -336, 114, -224, 0, -224)
+
+[node name="Ventilation01" type="Sprite2D" parent="."]
+position = Vector2(165.75, -168)
+scale = Vector2(0.0872474, 0.0863582)
+texture = ExtResource("1_vbhqt")

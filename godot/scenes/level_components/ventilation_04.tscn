@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dneb3140gedat"]
+
+[ext_resource type="Texture2D" uid="uid://cknnorpiqhtgm" path="res://assets/ventilation_corner_01.png" id="1_jb00o"]
+
+[node name="Ventilation01" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.69812, -3.78633)
+scale = Vector2(0.896371, 0.884812)
+polygon = PackedVector2Array(274.777, 0.888697, 275, -161, 379.644, -161, 377, -139, 297, -139, 297, 1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.69812, -3.78633)
+scale = Vector2(0.896371, 0.884812)
+polygon = PackedVector2Array(0.33678, 4.27925, 23.7646, 3.14906, 22.8855, -202, 136, -202, 136, -314.321, 380.76, -315.563, 378.528, -337, 112, -336, 114, -224, 0, -224)
+
+[node name="Ventilation01" type="Sprite2D" parent="."]
+position = Vector2(191.625, -196.675)
+scale = Vector2(0.100433, 0.0994113)
+texture = ExtResource("1_jb00o")
