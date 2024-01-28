@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=12 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b67mnal8buonv" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
 [ext_resource type="AudioStream" uid="uid://csvly5xbh4f2l" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="10_e06k2"]
+[ext_resource type="PackedScene" uid="uid://lj1yh2n2pnay" path="res://scenes/pickup.tscn" id="11_jsht0"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
@@ -23,14 +24,6 @@ position = Vector2(334, 232)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 476.0
-offset_top = 378.0
-offset_right = 632.0
-offset_bottom = 402.0
-text = "Todo: Game lol"
-scroll_active = false
 
 [node name="Level1" parent="." instance=ExtResource("7_dr253")]
 
@@ -57,7 +50,6 @@ player_id = 1
 [node name="AudioStreamPlayerBackgroundnMusic" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("8_d0tef")
-volume_db = -10.0
 autoplay = true
 max_distance = 100000.0
 attenuation = 0.00808801
@@ -135,3 +127,6 @@ position = Vector2(2173, -31)
 
 [node name="Box7" parent="." instance=ExtResource("10_e06k2")]
 position = Vector2(2308, -31)
+
+[node name="Pickup" parent="." instance=ExtResource("11_jsht0")]
+position = Vector2(857, 427)
