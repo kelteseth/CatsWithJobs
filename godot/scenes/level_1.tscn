@@ -257,7 +257,7 @@ texture = ExtResource("9_shlnm")
 position = Vector2(451, 300)
 scale = Vector2(1.0525, 1.0525)
 color = Color(0.211765, 0.211765, 0.211765, 0.662745)
-polygon = PackedVector2Array(-381.948, -187.173, -385.748, 246.081, 2608.08, 251.781, 2608.08, -170.071, 2634.68, -1707.36, -413.302, -1710.21)
+polygon = PackedVector2Array(-381.948, -187.173, -385.748, 246.081, 2608.08, 251.781, 2608.08, -170.071, 2661.28, -2236.58, -433.254, -2235.63)
 
 [node name="etage_5" parent="." instance=ExtResource("1_y5vmu")]
 position = Vector2(2635, -1445)
@@ -362,6 +362,9 @@ metadata/_edit_group_ = true
 [node name="Ground3" parent="etage_1" instance=ExtResource("1_y5vmu")]
 position = Vector2(-3009, 0)
 
+[node name="WallWithCutout8" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(2100, -1004)
+
 [node name="WallWithCutout5" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(1996, 564)
 
@@ -421,9 +424,6 @@ position = Vector2(3012, -470)
 [node name="Wall10" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3198, -925)
 
-[node name="WallWithCutout8" parent="." instance=ExtResource("3_q2ide")]
-position = Vector2(2100, -1004)
-
 [node name="WallWithCutout9" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(2970, -1004)
 
@@ -433,8 +433,23 @@ position = Vector2(3198, -1193)
 [node name="WallWithCutout10" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(1050, -483)
 
-[node name="Wall12" parent="." instance=ExtResource("2_t0e4h")]
-position = Vector2(3, -1284)
+[node name="WallWithCutout11" parent="WallWithCutout10" instance=ExtResource("21_v1kvn")]
+position = Vector2(2148, 1048)
 
-[node name="WallWithCutout11" parent="." instance=ExtResource("21_v1kvn")]
-position = Vector2(3198, 565)
+[node name="Wall12" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3, -1230)
+
+[node name="WallWithCutout12" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(805, -1524)
+
+[node name="Penthaus" parent="." instance=ExtResource("1_y5vmu")]
+position = Vector2(2002, -1968)
+
+[node name="Ground2" parent="Penthaus" instance=ExtResource("1_y5vmu")]
+position = Vector2(-602, 0)
+
+[node name="Ground" parent="Penthaus" instance=ExtResource("1_y5vmu")]
+position = Vector2(-1201, 0)
+
+[node name="WallWithCutout13" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(2565, -1524)
