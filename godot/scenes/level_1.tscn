@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cuwyf3brr2iqr" path="res://scenes/background/desk.tscn" id="10_axwuh"]
 [ext_resource type="Texture2D" uid="uid://crs7jghkdxlw7" path="res://assets/ventilation.png" id="20_48tgh"]
 [ext_resource type="PackedScene" uid="uid://b1pt2vujaiwwq" path="res://scenes/level_components/wall_with_ventilation.tscn" id="21_v1kvn"]
+[ext_resource type="PackedScene" uid="uid://v0o8d5npugxp" path="res://scenes/level_components/elevator.tscn" id="22_xiako"]
 [ext_resource type="PackedScene" uid="uid://jdktr40l24a6" path="res://scenes/level_components/elevator_right.tscn" id="34_55lnv"]
 
 [sub_resource type="Animation" id="Animation_rtl3c"]
@@ -37,20 +38,31 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(3012, -470), Vector2(3012, -470), Vector2(3012, -991), Vector2(3012, -991), Vector2(3012, -471)]
 }
-
-[sub_resource type="Animation" id="Animation_ewyvc"]
-resource_name = "elevator_movement"
-length = 4.0
-loop_mode = 1
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 3, 3.7, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(46, -991), Vector2(46, -991), Vector2(46, -1514), Vector2(46, -1512), Vector2(46, -991)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmyxs"]
 _data = {
-"RESET": SubResource("Animation_rtl3c"),
-"elevator_movement": SubResource("Animation_ewyvc")
+"elevator_movement": SubResource("Animation_rtl3c")
 }
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_vkdvl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bmyxs")
+}
 
 [node name="BigDoor2" type="Sprite2D" parent="."]
 position = Vector2(980, 383)
@@ -65,6 +77,31 @@ texture = ExtResource("2_5ikpl")
 [node name="Window" type="Sprite2D" parent="."]
 position = Vector2(521.875, -221.75)
 scale = Vector2(1.0525, 1.0525)
+texture = ExtResource("6_0g63c")
+
+[node name="Window18" type="Sprite2D" parent="Window"]
+position = Vector2(1084.31, -1450.12)
+scale = Vector2(1.3991, 1.53212)
+texture = ExtResource("6_0g63c")
+
+[node name="Window19" type="Sprite2D" parent="Window"]
+position = Vector2(1409.17, -1450.12)
+scale = Vector2(1.2223, 1.53212)
+texture = ExtResource("6_0g63c")
+
+[node name="Window20" type="Sprite2D" parent="Window"]
+position = Vector2(1730.29, -1450.12)
+scale = Vector2(1.3991, 1.53212)
+texture = ExtResource("6_0g63c")
+
+[node name="Window21" type="Sprite2D" parent="Window"]
+position = Vector2(2373.52, -1450.23)
+scale = Vector2(1.3991, 1.53212)
+texture = ExtResource("6_0g63c")
+
+[node name="Window22" type="Sprite2D" parent="Window"]
+position = Vector2(2051.89, -1450.12)
+scale = Vector2(1.20656, 1.53212)
 texture = ExtResource("6_0g63c")
 
 [node name="Window6" type="Sprite2D" parent="Window"]
@@ -254,6 +291,7 @@ scale = Vector2(0.335962, 0.335962)
 texture = ExtResource("9_shlnm")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(451, 300)
 scale = Vector2(1.0525, 1.0525)
 color = Color(0.211765, 0.211765, 0.211765, 0.662745)
@@ -389,11 +427,6 @@ position = Vector2(3, 922)
 [node name="WallWithCutout3" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(2603, 40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bmyxs")
-}
-
 [node name="Elevator" parent="." instance=ExtResource("5_d5ovh")]
 position = Vector2(48, 576)
 
@@ -419,7 +452,7 @@ position = Vector2(3, -401)
 position = Vector2(3, -841)
 
 [node name="Elevator2" parent="." instance=ExtResource("34_55lnv")]
-position = Vector2(3012, -470)
+position = Vector2(3012, -991)
 
 [node name="Wall10" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3198, -925)
@@ -437,19 +470,25 @@ position = Vector2(1050, -483)
 position = Vector2(2148, 1048)
 
 [node name="Wall12" parent="." instance=ExtResource("2_t0e4h")]
-position = Vector2(3, -1230)
+position = Vector2(3, -1278)
 
 [node name="WallWithCutout12" parent="." instance=ExtResource("3_q2ide")]
-position = Vector2(805, -1524)
+position = Vector2(1439, -1528.12)
 
 [node name="Penthaus" parent="." instance=ExtResource("1_y5vmu")]
-position = Vector2(2002, -1968)
+position = Vector2(2635, -1972.12)
 
 [node name="Ground2" parent="Penthaus" instance=ExtResource("1_y5vmu")]
 position = Vector2(-602, 0)
 
 [node name="Ground" parent="Penthaus" instance=ExtResource("1_y5vmu")]
-position = Vector2(-1201, 0)
+position = Vector2(-1200, 0)
 
-[node name="WallWithCutout13" parent="." instance=ExtResource("3_q2ide")]
-position = Vector2(2565, -1524)
+[node name="Wall" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3199, -1529)
+
+[node name="WallWithCutout11" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(231, -1003)
+
+[node name="Elevator3" parent="." instance=ExtResource("22_xiako")]
+position = Vector2(46, -1514)
