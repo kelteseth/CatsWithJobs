@@ -32,5 +32,11 @@ func _input(event):
 
 
 func _on_area_2d_body_entered(body):
-		if body is RigidBody2D:
-			self.selected_object = body
+	if body is RigidBody2D:
+		self.selected_object = body
+
+
+func _on_area_2d_body_exited(body):
+	if body == self.selected_object:
+		self.selected_object = null
+

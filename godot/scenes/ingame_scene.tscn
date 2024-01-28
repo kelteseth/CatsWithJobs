@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=13 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://b67mnal8buonv" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
 [ext_resource type="AudioStream" uid="uid://csvly5xbh4f2l" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
 [ext_resource type="PackedScene" uid="uid://c5l3fgk3hosoh" path="res://ui/overlays/game_end_overlay.tscn" id="10_gjdbd"]
+[ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="11_1oebf"]
+[ext_resource type="PackedScene" uid="uid://6pc5hmaoxtga" path="res://scenes/game_end.tscn" id="12_1fwi7"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
@@ -19,7 +21,7 @@ player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-position = Vector2(2676, -780)
+position = Vector2(423, 428)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
@@ -42,13 +44,11 @@ unique_name_in_owner = true
 process_mode = 2
 visible = false
 
-[node name="GameEndOverlay" parent="." instance=ExtResource("10_gjdbd")]
-
 [node name="Player_0" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(2676, -780)
+position = Vector2(423, 428)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(2485, -762)
+position = Vector2(309, 425)
 player_id = 1
 
 [node name="AudioStreamPlayerBackgroundnMusic" type="AudioStreamPlayer2D" parent="."]
@@ -63,3 +63,57 @@ attenuation = 0.00808801
 stream = ExtResource("9_v6kq1")
 volume_db = 10.0
 autoplay = true
+
+[node name="Box" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1418, 471)
+
+[node name="Box2" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1593, 361)
+
+[node name="Box3" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1652, 210)
+
+[node name="Box4" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2091, 409)
+
+[node name="Box5" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2223, 399)
+
+[node name="Box6" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2160, 350)
+
+[node name="Box7" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2765, 257)
+
+[node name="Box8" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2843, 261)
+
+[node name="Box9" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2150, 169)
+
+[node name="Box10" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2786, 173)
+
+[node name="Box11" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2241, 176)
+
+[node name="Box12" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2322, 299)
+
+[node name="Box13" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2353, 419)
+
+[node name="Box14" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2254, 501)
+
+[node name="Box15" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2369, 523)
+
+[node name="Box16" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2465, 429)
+
+[node name="Box17" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2423, 299)
+
+[node name="Pickup" parent="." instance=ExtResource("12_1fwi7")]
+position = Vector2(2802, -1668)
