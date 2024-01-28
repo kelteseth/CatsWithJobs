@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bfkacg2hluwmi"]
+[gd_scene load_steps=28 format=3 uid="uid://bfkacg2hluwmi"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
@@ -9,19 +9,36 @@
 [ext_resource type="Texture2D" uid="uid://bacy3tjgcly4p" path="res://assets/door_open.png" id="3_xi7pv"]
 [ext_resource type="Texture2D" uid="uid://duyubxb667qiy" path="res://assets/cabinet.png" id="4_jhudv"]
 [ext_resource type="PackedScene" uid="uid://be8fvckvl2om2" path="res://scenes/level_components/elevator_meowder.tscn" id="5_d5ovh"]
-[ext_resource type="PackedScene" uid="uid://dagyv5rgxbusa" path="res://scenes/background/desk_01.tscn" id="5_hx3ld"]
-[ext_resource type="Texture2D" uid="uid://bexgl64g7w7cb" path="res://assets/window.png" id="6_0g63c"]
-[ext_resource type="Texture2D" uid="uid://bec8f0mh5dby5" path="res://assets/plant_big.png" id="7_icmot"]
+[ext_resource type="PackedScene" path="res://scenes/background/desk_01.tscn" id="5_hx3ld"]
+[ext_resource type="Texture2D" uid="uid://dlbb3ycservor" path="res://assets/window.png" id="6_0g63c"]
+[ext_resource type="Texture2D" uid="uid://bq2us2gbvf6j8" path="res://assets/plant_big.png" id="7_icmot"]
 [ext_resource type="PackedScene" uid="uid://clabe2ydlmsus" path="res://scenes/background/sitting_cat.tscn" id="8_jqk0x"]
-[ext_resource type="Texture2D" uid="uid://c5bbu5o624htk" path="res://assets/carton_open.png" id="8_oja3j"]
+[ext_resource type="Texture2D" uid="uid://bamjnft804jro" path="res://assets/carton_open.png" id="8_oja3j"]
 [ext_resource type="PackedScene" uid="uid://cjj7olmp2mdxy" path="res://scenes/background/sitting_cat_01.tscn" id="9_7cosr"]
-[ext_resource type="Texture2D" uid="uid://dj1jmutdphg1t" path="res://assets/carton_closed.png" id="9_pcwdp"]
+[ext_resource type="Texture2D" uid="uid://dbqvrowlgpnnw" path="res://assets/carton_closed.png" id="9_pcwdp"]
 [ext_resource type="Texture2D" uid="uid://17cynhi17gqk" path="res://assets/officecat_standing_left.png" id="9_shlnm"]
 [ext_resource type="PackedScene" uid="uid://cuwyf3brr2iqr" path="res://scenes/background/desk.tscn" id="10_axwuh"]
 [ext_resource type="Texture2D" uid="uid://crs7jghkdxlw7" path="res://assets/ventilation.png" id="20_48tgh"]
 [ext_resource type="PackedScene" uid="uid://b1pt2vujaiwwq" path="res://scenes/level_components/wall_with_ventilation.tscn" id="21_v1kvn"]
+[ext_resource type="PackedScene" uid="uid://lj1yh2n2pnay" path="res://scenes/pickup.tscn" id="22_8b8qw"]
 [ext_resource type="PackedScene" uid="uid://v0o8d5npugxp" path="res://scenes/level_components/elevator.tscn" id="22_xiako"]
-[ext_resource type="PackedScene" uid="uid://jdktr40l24a6" path="res://scenes/level_components/elevator_right.tscn" id="34_55lnv"]
+[ext_resource type="PackedScene" uid="uid://6pc5hmaoxtga" path="res://scenes/game_end.tscn" id="23_nrpyg"]
+[ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="24_jegvh"]
+
+[sub_resource type="Animation" id="Animation_vnl0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elevator2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3012, -480)]
+}
 
 [sub_resource type="Animation" id="Animation_rtl3c"]
 length = 4.0
@@ -33,26 +50,15 @@ tracks/0/path = NodePath("Elevator2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 3, 3.7, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(3012, -470), Vector2(3012, -470), Vector2(3012, -991), Vector2(3012, -991), Vector2(3012, -471)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Elevator3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 3, 3.7, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(46, -991), Vector2(46, -991), Vector2(46, -1514), Vector2(46, -1512), Vector2(46, -991)]
+"values": [Vector2(3012, -480), Vector2(3012, -1000), Vector2(3012, -480)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmyxs"]
 _data = {
+"RESET": SubResource("Animation_vnl0h"),
 "elevator_movement": SubResource("Animation_rtl3c")
 }
 
@@ -451,9 +457,6 @@ position = Vector2(3, -401)
 [node name="Wall9" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3, -841)
 
-[node name="Elevator2" parent="." instance=ExtResource("34_55lnv")]
-position = Vector2(3012, -991)
-
 [node name="Wall10" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3198, -925)
 
@@ -492,3 +495,18 @@ position = Vector2(231, -1003)
 
 [node name="Elevator3" parent="." instance=ExtResource("22_xiako")]
 position = Vector2(46, -1514)
+
+[node name="Elevator2" parent="." instance=ExtResource("22_xiako")]
+position = Vector2(3012, -480)
+
+[node name="Pickup" parent="." instance=ExtResource("22_8b8qw")]
+position = Vector2(2215, -765)
+
+[node name="Pickup2" parent="." instance=ExtResource("23_nrpyg")]
+position = Vector2(2727, -799)
+
+[node name="Box" parent="." instance=ExtResource("24_jegvh")]
+position = Vector2(2717, -600)
+
+[node name="Box2" parent="." instance=ExtResource("24_jegvh")]
+position = Vector2(2321, -603)
