@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c5l3fgk3hosoh"]
+
+[node name="GameEndOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 221.0
+offset_right = 549.0
+offset_bottom = 261.0
+text = "END"

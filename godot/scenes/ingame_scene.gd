@@ -5,6 +5,7 @@ extends Node2D
 @export var ingame_overlay: Control
 @export var player_0 : CharacterBody2D
 @export var player_1 : CharacterBody2D
+@export var end_credits : Control
 
 var active_player = 0
 
@@ -14,9 +15,14 @@ func _ready() -> void:
 	player_1.turn_done.connect(on_player_turn_done)
 	player_0.player_moved.connect(set_ui_player_percentage_moved)
 	player_1.player_moved.connect(set_ui_player_percentage_moved)
+	player_0.game_end.connect(load_end_credits)
+	player_1.game_end.connect(load_end_credits)
 	player_0.set_player_active(true)
 	player_1.set_player_active(false)
 
+func load_end_credits(player_id):
+	
+	pass
 func on_player_turn_done(player_id):
 	print("Player turn done of player: ", player_id)
 	set_ui_player_percentage_moved(player_id,0)

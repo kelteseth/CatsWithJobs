@@ -29,6 +29,7 @@ enum MovementDirection {INVALID, LEFT, RIGHT}
 
 signal turn_done(player_id)
 signal player_moved(player_id, units_moved)
+signal game_end(player_id)
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -196,6 +197,8 @@ func _on_pickup_area_2d_area_entered(area):
 	if area.has_method("get_pickup"):
 		area.queue_free()
 		has_gun = true
+	if area.is_in_group("game_end"):
+		game_end.emit(player_id)
 
 
 func _on_pickup_area_2d_area_exited(area):
