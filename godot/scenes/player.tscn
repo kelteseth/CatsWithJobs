@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3kdd27qyixd8"]
+[gd_scene load_steps=19 format=3 uid="uid://b3kdd27qyixd8"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_2ppkv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_ef8x3"]
@@ -10,15 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://bc2dwg12brnb6" path="res://assets/cat_one_right_body.png" id="7_r6kqh"]
 [ext_resource type="Texture2D" uid="uid://bgcav8lto6w67" path="res://assets/cat_one_right_head_sleep.png" id="8_e5vao"]
 [ext_resource type="Texture2D" uid="uid://4ip4d8f4hx43" path="res://assets/cat_one_right_body_action.png" id="9_8xun8"]
-[ext_resource type="Texture2D" uid="uid://cw5tvu08ga06w" path="res://assets/gun.png" id="10_yxm58"]
+[ext_resource type="Texture2D" uid="uid://cbd0lusd13dp3" path="res://assets/flamethrower_ right.png" id="11_6ig3o"]
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="11_y6stc"]
-[ext_resource type="AudioStream" uid="uid://bmab8j8vdsvsw" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
+[ext_resource type="AudioStream" uid="uid://bccnnuxegty61" path="res://assets/Sounds/Cat/slow_steps.ogg" id="12_y65u5"]
 [ext_resource type="AudioStream" uid="uid://cstwvjwi08wau" path="res://assets/Sounds/Cat/jump.ogg" id="13_4qxdn"]
-[ext_resource type="AudioStream" uid="uid://ciiaebs2sdm3g" path="res://assets/Sounds/Items/gun05_single_shot.ogg" id="14_vtar0"]
-[ext_resource type="AudioStream" uid="uid://bckipjxvtsvyu" path="res://assets/Sounds/Music/cats_spawn.ogg" id="15_bfcj2"]
+[ext_resource type="AudioStream" uid="uid://0qb32tywht43" path="res://assets/Sounds/Items/gun05_single_shot.ogg" id="14_vtar0"]
+[ext_resource type="AudioStream" uid="uid://3jtlyyfgp7ca" path="res://assets/Sounds/Music/cats_spawn.ogg" id="15_bfcj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7k1"]
 size = Vector2(30, 114)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxk03"]
+radius = 55.0364
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("phantom_camera")]
 script = ExtResource("1_2ppkv")
@@ -51,17 +54,18 @@ visible = false
 position = Vector2(81, 90)
 
 [node name="GunLeft" type="Sprite2D" parent="GunPosLeft"]
-position = Vector2(0.999998, -2)
-scale = Vector2(0.406667, 0.406667)
-texture = ExtResource("10_yxm58")
+position = Vector2(0, -0.999999)
+scale = Vector2(0.0784525, 0.0784525)
+texture = ExtResource("11_6ig3o")
 
 [node name="GunPosRight" type="Node2D" parent="."]
+visible = false
 position = Vector2(11, 85)
 
 [node name="GunRight" type="Sprite2D" parent="GunPosRight"]
-position = Vector2(2.38419e-07, 4)
-scale = Vector2(0.406667, 0.406667)
-texture = ExtResource("10_yxm58")
+position = Vector2(0.999992, -3.8147e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_6ig3o")
 flip_v = true
 
 [node name="TargetCursor" type="Sprite2D" parent="."]
@@ -82,3 +86,11 @@ volume_db = 15.0
 [node name="AudioStreamPlayerSpawnSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_bfcj2")
 volume_db = 12.0
+
+[node name="PickupArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
+position = Vector2(52, 63)
+shape = SubResource("CircleShape2D_qxk03")
+
+[connection signal="body_entered" from="PickupArea2D" to="." method="_on_pickup_area_2d_body_entered"]
