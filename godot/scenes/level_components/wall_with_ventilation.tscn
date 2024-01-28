@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1pt2vujaiwwq"]
+
+[ext_resource type="Texture2D" uid="uid://c86j7dw2eib52" path="res://assets/wall_with_ventilation.png" id="1_o4kcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsg3v"]
+size = Vector2(420, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m48y0"]
+size = Vector2(427.992, 2348.7)
+
+[node name="WallWithCutout" type="StaticBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(22, -24)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_hsg3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21.9429, -324.435)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_m48y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25, -225)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_o4kcd")

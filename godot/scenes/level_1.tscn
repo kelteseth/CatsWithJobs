@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bfkacg2hluwmi"]
+[gd_scene load_steps=25 format=3 uid="uid://bfkacg2hluwmi"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_vkdvl"]
 [ext_resource type="PackedScene" uid="uid://dv1fn74xcj0yj" path="res://scenes/level_components/ground.tscn" id="1_y5vmu"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bacy3tjgcly4p" path="res://assets/door_open.png" id="3_xi7pv"]
 [ext_resource type="Texture2D" uid="uid://duyubxb667qiy" path="res://assets/cabinet.png" id="4_jhudv"]
 [ext_resource type="PackedScene" uid="uid://be8fvckvl2om2" path="res://scenes/level_components/elevator_meowder.tscn" id="5_d5ovh"]
-[ext_resource type="PackedScene" uid="uid://bxthhyt5ej1me" path="res://scenes/background/desk_01.tscn" id="5_hx3ld"]
+[ext_resource type="PackedScene" uid="uid://dagyv5rgxbusa" path="res://scenes/background/desk_01.tscn" id="5_hx3ld"]
 [ext_resource type="Texture2D" uid="uid://bexgl64g7w7cb" path="res://assets/window.png" id="6_0g63c"]
 [ext_resource type="Texture2D" uid="uid://bec8f0mh5dby5" path="res://assets/plant_big.png" id="7_icmot"]
 [ext_resource type="PackedScene" uid="uid://clabe2ydlmsus" path="res://scenes/background/sitting_cat.tscn" id="8_jqk0x"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dj1jmutdphg1t" path="res://assets/carton_closed.png" id="9_pcwdp"]
 [ext_resource type="Texture2D" uid="uid://17cynhi17gqk" path="res://assets/officecat_standing_left.png" id="9_shlnm"]
 [ext_resource type="PackedScene" uid="uid://cuwyf3brr2iqr" path="res://scenes/background/desk.tscn" id="10_axwuh"]
+[ext_resource type="Texture2D" uid="uid://crs7jghkdxlw7" path="res://assets/ventilation.png" id="20_48tgh"]
+[ext_resource type="PackedScene" uid="uid://b1pt2vujaiwwq" path="res://scenes/level_components/wall_with_ventilation.tscn" id="21_v1kvn"]
 [ext_resource type="PackedScene" uid="uid://jdktr40l24a6" path="res://scenes/level_components/elevator_right.tscn" id="34_55lnv"]
 
 [sub_resource type="Animation" id="Animation_rtl3c"]
@@ -60,46 +62,6 @@ position = Vector2(2342, 375)
 scale = Vector2(0.0714597, 0.0714597)
 texture = ExtResource("2_5ikpl")
 
-[node name="Window4" type="Sprite2D" parent="."]
-position = Vector2(1429, 209)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window5" type="Sprite2D" parent="."]
-position = Vector2(2640, 210)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window3" type="Sprite2D" parent="."]
-position = Vector2(629, 210)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window6" type="Sprite2D" parent="."]
-position = Vector2(3088, 200)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window7" type="Sprite2D" parent="."]
-position = Vector2(2852, 204)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window8" type="Sprite2D" parent="."]
-position = Vector2(1857, 201)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window9" type="Sprite2D" parent="."]
-position = Vector2(1638, 203)
-scale = Vector2(0.603, 0.397)
-texture = ExtResource("6_0g63c")
-
-[node name="Window2" type="Sprite2D" parent="."]
-position = Vector2(403, 208.5)
-scale = Vector2(0.603333, 0.396667)
-texture = ExtResource("6_0g63c")
-
 [node name="Window" type="Sprite2D" parent="."]
 position = Vector2(521.875, -221.75)
 scale = Vector2(1.0525, 1.0525)
@@ -139,6 +101,67 @@ texture = ExtResource("6_0g63c")
 position = Vector2(324.941, 0.950122)
 scale = Vector2(1.00764, 1.00764)
 texture = ExtResource("6_0g63c")
+
+[node name="Window11" type="Sprite2D" parent="Window"]
+position = Vector2(316.508, -487.648)
+scale = Vector2(1.06356, 1.06356)
+texture = ExtResource("6_0g63c")
+
+[node name="Window10" type="Sprite2D" parent="Window"]
+position = Vector2(-20.7838, -489.549)
+scale = Vector2(1.06356, 1.06356)
+texture = ExtResource("6_0g63c")
+
+[node name="Window9" type="Sprite2D" parent="Window"]
+position = Vector2(861.876, 409.264)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window12" type="Sprite2D" parent="Window"]
+position = Vector2(2012.47, 410.214)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window13" type="Sprite2D" parent="Window"]
+position = Vector2(101.781, 410.214)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window14" type="Sprite2D" parent="Window"]
+position = Vector2(2438.12, 400.713)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window15" type="Sprite2D" parent="Window"]
+position = Vector2(2213.9, 404.513)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window16" type="Sprite2D" parent="Window"]
+position = Vector2(1268.53, 401.663)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window17" type="Sprite2D" parent="Window"]
+position = Vector2(1060.45, 403.563)
+scale = Vector2(0.572922, 0.377197)
+texture = ExtResource("6_0g63c")
+
+[node name="Window2" type="Sprite2D" parent="Window"]
+position = Vector2(-112.945, 408.789)
+scale = Vector2(0.573238, 0.376881)
+texture = ExtResource("6_0g63c")
+
+[node name="Ventilation" type="Sprite2D" parent="."]
+position = Vector2(514, 477)
+rotation = 1.56925
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("20_48tgh")
+
+[node name="Whiteboard3" type="Sprite2D" parent="."]
+position = Vector2(2075, -625)
+scale = Vector2(0.232578, 0.232578)
+texture = ExtResource("3_nattf")
 
 [node name="Whiteboard2" type="Sprite2D" parent="."]
 position = Vector2(1146.88, -100.75)
@@ -336,11 +359,11 @@ metadata/_edit_group_ = true
 position = Vector2(-2407, 0)
 metadata/_edit_group_ = true
 
+[node name="Ground3" parent="etage_1" instance=ExtResource("1_y5vmu")]
+position = Vector2(-3009, 0)
+
 [node name="WallWithCutout5" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(1996, 564)
-
-[node name="Wall" parent="." instance=ExtResource("2_t0e4h")]
-position = Vector2(3199, 562)
 
 [node name="Wall2" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3, 481)
@@ -359,9 +382,6 @@ position = Vector2(3198, 39)
 
 [node name="Wall5" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3, 922)
-
-[node name="Ground3" parent="." instance=ExtResource("1_y5vmu")]
-position = Vector2(-373, 643)
 
 [node name="WallWithCutout3" parent="." instance=ExtResource("3_q2ide")]
 position = Vector2(2603, 40)
@@ -409,3 +429,12 @@ position = Vector2(2970, -1004)
 
 [node name="Wall11" parent="." instance=ExtResource("2_t0e4h")]
 position = Vector2(3198, -1193)
+
+[node name="WallWithCutout10" parent="." instance=ExtResource("3_q2ide")]
+position = Vector2(1050, -483)
+
+[node name="Wall12" parent="." instance=ExtResource("2_t0e4h")]
+position = Vector2(3, -1284)
+
+[node name="WallWithCutout11" parent="." instance=ExtResource("21_v1kvn")]
+position = Vector2(3198, 565)
