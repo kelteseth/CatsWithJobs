@@ -1,15 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=13 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/ingame_scene.tscn" id="2_nl5i6"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="5_ubesq"]
+[ext_resource type="PackedScene" uid="uid://bfkacg2hluwmi" path="res://scenes/level_1.tscn" id="6_cg6gw"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
 font_size = 8
 font_color = Color(1, 1, 1, 0.486275)
+
+[sub_resource type="Animation" id="Animation_qpfmq"]
+resource_name = "menue_animation"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 6.2, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2072, 2125), Vector2(-2072, 2125), Vector2(-236, 10), Vector2(-236, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_6ko7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2072, 2125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vunx8"]
+_data = {
+"RESET": SubResource("Animation_6ko7x"),
+"menue_animation": SubResource("Animation_qpfmq")
+}
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_1foie")
@@ -18,10 +58,16 @@ settings_scene = ExtResource("3_dgs4d")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Polygon2D" type="Polygon2D" parent="UI"]
+position = Vector2(55, 80)
+color = Color(0.239216, 0.239216, 0.239216, 0.745098)
+polygon = PackedVector2Array(-57, -150, 370, -187, 369, 647, -57, 571)
+
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -3.0
+offset_right = 791.0
+offset_bottom = 645.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -35,6 +81,7 @@ layout_mode = 2
 [node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("5_ubesq")
 text = "continue"
 
 [node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
@@ -72,6 +119,15 @@ horizontal_alignment = 1
 [node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
 unique_name_in_owner = true
 visible = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Level1")
+libraries = {
+"": SubResource("AnimationLibrary_vunx8")
+}
+
+[node name="Level1" parent="." instance=ExtResource("6_cg6gw")]
+position = Vector2(-2072, 2125)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_drnm6")
