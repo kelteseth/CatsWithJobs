@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c5vyoo400vr0u" path="res://ui/overlays/ingame_overlay.tscn" id="5_yrup4"]
 [ext_resource type="PackedScene" uid="uid://b3kdd27qyixd8" path="res://scenes/player.tscn" id="6_megu6"]
 [ext_resource type="PackedScene" uid="uid://bfkacg2hluwmi" path="res://scenes/level_1.tscn" id="7_dr253"]
-[ext_resource type="AudioStream" uid="uid://cxaswq71s52so" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
-[ext_resource type="AudioStream" uid="uid://by4e6wbhrohwy" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
+[ext_resource type="AudioStream" uid="uid://b67mnal8buonv" path="res://assets/Sounds/Music/background_music_office.ogg" id="8_d0tef"]
+[ext_resource type="AudioStream" uid="uid://csvly5xbh4f2l" path="res://assets/Sounds/Ambience/office_noises.ogg" id="9_v6kq1"]
 [ext_resource type="PackedScene" uid="uid://c5l3fgk3hosoh" path="res://ui/overlays/game_end_overlay.tscn" id="10_gjdbd"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
