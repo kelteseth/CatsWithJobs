@@ -23,7 +23,7 @@ player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-position = Vector2(423, 428)
+position = Vector2(1309, -1148)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
@@ -47,7 +47,7 @@ process_mode = 2
 visible = false
 
 [node name="Player_0" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(423, 428)
+position = Vector2(1309, -1148)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
 position = Vector2(296, -118)
@@ -85,22 +85,31 @@ position = Vector2(338, -581)
 position = Vector2(481, -699)
 
 [node name="Box7" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2765, 257)
+position = Vector2(3054, 515)
 
 [node name="Box8" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2843, 261)
+position = Vector2(3146, 512)
 
 [node name="Box9" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(348, -693)
 
 [node name="Box10" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2786, 173)
+position = Vector2(3112, 433)
 
 [node name="Box11" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(252, -523)
 
 [node name="Box12" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2322, 299)
+position = Vector2(3062, 340)
+
+[node name="Box22" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2745, 311)
+
+[node name="Box23" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2743, 402)
+
+[node name="Box24" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(2794, 483)
 
 [node name="Box13" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(594, -796)
@@ -109,13 +118,13 @@ position = Vector2(594, -796)
 position = Vector2(455, -556)
 
 [node name="Box15" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2369, 523)
+position = Vector2(3153, 344)
 
 [node name="Box16" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2465, 429)
+position = Vector2(3024, 432)
 
 [node name="Box17" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2423, 299)
+position = Vector2(2964, 528)
 
 [node name="Pickup" parent="." instance=ExtResource("12_1fwi7")]
 position = Vector2(2802, -1668)
@@ -159,3 +168,42 @@ position = Vector2(-66, 191)
 
 [node name="Pickup2" parent="." instance=ExtResource("14_2nqaj")]
 position = Vector2(-399, 124)
+
+[node name="Pickup3" parent="." instance=ExtResource("14_2nqaj")]
+position = Vector2(3269, -1168)
+
+[node name="Pickup4" parent="." instance=ExtResource("14_2nqaj")]
+position = Vector2(2013, -252)
+
+[node name="Box25" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1050, -1202)
+
+[node name="Box26" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1050, -1125)
+
+[node name="Box27" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1061, -1051)
+
+[node name="Box28" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1152, -1057)
+
+[node name="Box29" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1144, -1158)
+
+[node name="Box30" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1233, -1051)
+
+[node name="Box31" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1214, -1138)
+
+[node name="Box32" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1125, -1269)
+
+[node name="Box33" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1053, -1279)
+
+[node name="Box34" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1075, -1367)
+
+[node name="Box35" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(1204, -1229)
