@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=14 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c5l3fgk3hosoh" path="res://ui/overlays/game_end_overlay.tscn" id="10_gjdbd"]
 [ext_resource type="PackedScene" uid="uid://do062sse1ppiu" path="res://interactions/box/box.tscn" id="11_1oebf"]
 [ext_resource type="PackedScene" uid="uid://6pc5hmaoxtga" path="res://scenes/game_end.tscn" id="12_1fwi7"]
+[ext_resource type="PackedScene" uid="uid://cy5wj6ynbbs35" path="res://scenes/level_components/lamp.tscn" id="13_l2ecj"]
 
 [node name="IngameScene" type="Node2D" node_paths=PackedStringArray("ingame_overlay", "player_0", "player_1")]
 script = ExtResource("1_objyc")
@@ -48,7 +49,7 @@ visible = false
 position = Vector2(423, 428)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(309, 425)
+position = Vector2(296, -118)
 player_id = 1
 
 [node name="AudioStreamPlayerBackgroundnMusic" type="AudioStreamPlayer2D" parent="."]
@@ -74,13 +75,13 @@ position = Vector2(1593, 361)
 position = Vector2(1652, 210)
 
 [node name="Box4" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2091, 409)
+position = Vector2(428, -792)
 
 [node name="Box5" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2223, 399)
+position = Vector2(338, -581)
 
 [node name="Box6" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2160, 350)
+position = Vector2(481, -699)
 
 [node name="Box7" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(2765, 257)
@@ -89,22 +90,22 @@ position = Vector2(2765, 257)
 position = Vector2(2843, 261)
 
 [node name="Box9" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2150, 169)
+position = Vector2(348, -693)
 
 [node name="Box10" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(2786, 173)
 
 [node name="Box11" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2241, 176)
+position = Vector2(252, -523)
 
 [node name="Box12" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(2322, 299)
 
 [node name="Box13" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2353, 419)
+position = Vector2(594, -796)
 
 [node name="Box14" parent="." instance=ExtResource("11_1oebf")]
-position = Vector2(2254, 501)
+position = Vector2(455, -556)
 
 [node name="Box15" parent="." instance=ExtResource("11_1oebf")]
 position = Vector2(2369, 523)
@@ -117,3 +118,37 @@ position = Vector2(2423, 299)
 
 [node name="Pickup" parent="." instance=ExtResource("12_1fwi7")]
 position = Vector2(2802, -1668)
+
+[node name="Lamp2" parent="." instance=ExtResource("13_l2ecj")]
+position = Vector2(201, -213)
+rotation = -4.71238
+scale = Vector2(0.338694, 0.658696)
+
+[node name="Lamp6" parent="." instance=ExtResource("13_l2ecj")]
+position = Vector2(201, 48)
+rotation = -4.71238
+scale = Vector2(0.338694, 0.658696)
+
+[node name="Lamp5" parent="." instance=ExtResource("13_l2ecj")]
+position = Vector2(201, -477)
+rotation = -4.71238
+scale = Vector2(0.338694, 0.658696)
+
+[node name="Lamp3" parent="." instance=ExtResource("13_l2ecj")]
+position = Vector2(77, -17)
+rotation = -7.85397
+scale = Vector2(0.338694, 0.658696)
+
+[node name="Lamp4" parent="." instance=ExtResource("13_l2ecj")]
+position = Vector2(76, -297)
+rotation = -7.85397
+scale = Vector2(0.338694, 0.658696)
+
+[node name="Box18" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(187, 252)
+
+[node name="Box19" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(162, 148)
+
+[node name="Box20" parent="." instance=ExtResource("11_1oebf")]
+position = Vector2(-162, 124)

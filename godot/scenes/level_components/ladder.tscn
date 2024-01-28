@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5lldkjv6rdnc"]
+[gd_scene load_steps=3 format=3 uid="uid://b5lldkjv6rdnc"]
 
 [ext_resource type="Texture2D" uid="uid://b35vohml6asp2" path="res://assets/ladder.png" id="1_vn660"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qedrv"]
+size = Vector2(66, 20)
 
 [node name="Ladder" type="StaticBody2D"]
 
@@ -12,3 +15,15 @@ polygon = PackedVector2Array(73, -255, 150, -257, 106, -137, 58, 2, -22, 1)
 position = Vector2(152, -122)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_vn660")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(58, -23)
+shape = SubResource("RectangleShape2D_qedrv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(79, -52)
+shape = SubResource("RectangleShape2D_qedrv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(91, -91)
+shape = SubResource("RectangleShape2D_qedrv")

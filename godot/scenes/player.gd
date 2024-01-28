@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
-@export var max_player_units_moved: float = 200
+@export var max_player_units_moved: float = 380
 @export var phantom_camera: PhantomCamera2D
 @export var player_id = 0
 @export var plazer_image_left: CompressedTexture2D
