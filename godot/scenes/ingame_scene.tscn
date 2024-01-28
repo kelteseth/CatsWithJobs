@@ -24,7 +24,7 @@ player_1 = NodePath("Player_1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-position = Vector2(-168, 114)
+position = Vector2(671, 428)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("2_m6rsn")
@@ -48,10 +48,10 @@ process_mode = 2
 visible = false
 
 [node name="Player_0" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(-168, 114)
+position = Vector2(671, 428)
 
 [node name="Player_1" parent="." instance=ExtResource("6_megu6")]
-position = Vector2(296, -118)
+position = Vector2(533, 429)
 player_id = 1
 
 [node name="AudioStreamPlayerBackgroundnMusic" type="AudioStreamPlayer2D" parent="."]
